@@ -121,6 +121,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &373398207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373398209}
+  - component: {fileID: 373398208}
+  m_Layer: 0
+  m_Name: Map 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &373398208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373398207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a485de981968ff4f817ecf7dc884aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainPrefabs:
+  - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
+  - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
+  - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
+  - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
+  - {fileID: 7483985392478547541, guid: c9b617489dc52fe4bb75cf742d123817, type: 3}
+  - {fileID: 7483985392478547541, guid: c9b617489dc52fe4bb75cf742d123817, type: 3}
+  - {fileID: 7483985392478547541, guid: c9b617489dc52fe4bb75cf742d123817, type: 3}
+  - {fileID: 3172309290290971284, guid: 601aa7cbd3546424797059cc7e2c28cd, type: 3}
+  - {fileID: 599307426768743892, guid: 862d98dc182fdcf46b1d81bbdfaea89b, type: 3}
+  - {fileID: 7114669620327200306, guid: 193b8e6d661169843b3a0ab9c092a801, type: 3}
+  MapWidth: 160
+  MapHeight: 90
+  Magnification: 4
+  XOffset: 0
+  YOffset: 0
+--- !u!4 &373398209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373398207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4775734, y: 2.9774494, z: -0.46132374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +283,7 @@ GameObject:
   - component: {fileID: 712515807}
   - component: {fileID: 712515808}
   m_Layer: 0
-  m_Name: Map
+  m_Name: Map 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,6 +315,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a485de981968ff4f817ecf7dc884aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TerrainPrefabs: []
+  MapWidth: 160
+  MapHeight: 90
+  Magnification: 15
+  XOffset: 0
+  YOffset: 0
+--- !u!1 &743916387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 743916389}
+  - component: {fileID: 743916388}
+  m_Layer: 0
+  m_Name: Map 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &743916388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743916387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a485de981968ff4f817ecf7dc884aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   TerrainPrefabs:
   - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
   - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
@@ -267,11 +361,25 @@ MonoBehaviour:
   - {fileID: 3172309290290971284, guid: 601aa7cbd3546424797059cc7e2c28cd, type: 3}
   - {fileID: 599307426768743892, guid: 862d98dc182fdcf46b1d81bbdfaea89b, type: 3}
   - {fileID: 7114669620327200306, guid: 193b8e6d661169843b3a0ab9c092a801, type: 3}
-  MapWidth: 160
-  MapHeight: 90
-  Magnification: 7
+  MapWidth: 16
+  MapHeight: 9
+  Magnification: 18
   XOffset: 0
   YOffset: 0
+--- !u!4 &743916389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743916387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4775734, y: 2.9774494, z: -0.46132374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

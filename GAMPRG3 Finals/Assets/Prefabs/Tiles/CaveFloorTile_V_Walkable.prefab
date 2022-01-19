@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270228873759067762}
   - component: {fileID: 1270228873759067763}
+  - component: {fileID: 3635797807953648467}
   m_Layer: 0
   m_Name: PlainsTile_Walkable
   m_TagString: Untagged
@@ -81,3 +82,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3635797807953648467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270228873759067760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a63aa7321a43e46b9036daf4a59980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XCoordinate: 0
+  YCoordinate: 0
+  Abundance: 5

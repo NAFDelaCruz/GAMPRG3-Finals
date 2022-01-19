@@ -17,7 +17,8 @@ public class GenerateMap : MonoBehaviour
 
     [Header("Reference Objects")]
     [Tooltip("Set in order of Landscape height, put Voids and Obstacles in the end.")]
-/**/public List<GameObject> TerrainPrefabs;
+    /**/
+    public List<GameObject> TerrainPrefabs;
 
     [Header("Map Variables")]
 
@@ -35,11 +36,10 @@ public class GenerateMap : MonoBehaviour
     List<List<int>> NoiseGrid = new List<List<int>>();
     List<List<GameObject>> TileGrid = new List<List<GameObject>>();
 
-
     void Start()
     {
         CreateTileset();
-        CreateTileGroups();
+        //CreateTileGroups();
         Generate();
     }
 
@@ -56,7 +56,8 @@ public class GenerateMap : MonoBehaviour
             TileSet.Add(Index, TilePrefab);
             Index++;
         }
-/**/   
+        
+/**/    
     }
 
     void CreateTileGroups()
@@ -65,13 +66,18 @@ public class GenerateMap : MonoBehaviour
             forest tiles **/
 
         TileGroups = new Dictionary<int, GameObject>();
-        foreach (KeyValuePair<int, GameObject> PrefabPair in TileSet)
+
+/**/    int Index = 0;
+
+        foreach (KeyValuePair<int, GameObject> PrefabPairs in TileSet)
         {
-            GameObject TileGroup = new GameObject(PrefabPair.Value.name);
+            GameObject TileGroup = new GameObject(PrefabPairs.Value.name);
             TileGroup.transform.parent = gameObject.transform;
             TileGroup.transform.localPosition = new Vector3(0, 0, 0);
-            TileGroups.Add(PrefabPair.Key, TileGroup);
-        }
+            TileGroups.Add(Index, TileGroup);
+            Index++;
+/**/    }
+
     }
 
     void Generate()
@@ -104,13 +110,8 @@ public class GenerateMap : MonoBehaviour
             (y - YOffset) / Magnification
         );
         float ClampPerlin = Mathf.Clamp01(RawPerlin); // Thanks: youtu.be/qNZ-0-7WuS8&lc=UgyoLWkYZxyp1nNc4f94AaABAg
-        float ScaledPerlin = ClampPerlin * TileSet.Count;
+        float ScaledPerlin = Mathf.Clamp(ClampPerlin * TileSet.Count, 0, TileSet.Count - 1);
 
-        // Replaced 4 with tileset.Count to make adding tiles easier
-        if (ScaledPerlin == TileSet.Count)
-        {
-            ScaledPerlin = (TileSet.Count - 1);
-        }
         return Mathf.FloorToInt(ScaledPerlin);
     }
 
@@ -120,12 +121,20 @@ public class GenerateMap : MonoBehaviour
             tiles, set it's position and store the gameobject. **/
 
         GameObject TilePrefab = TileSet[TileID];
-        GameObject TileGroup = TileGroups[TileID];
-        GameObject Tile = Instantiate(TilePrefab, TileGroup.transform);
+        //GameObject TileGroup = TileGroups[TileID];
+        GameObject Tile = Instantiate(TilePrefab, gameObject.transform);
+        Tiles TilesScript = TilePrefab.GetComponent<Tiles>();
 
-        Tile.name = string.Format("{0},{1}", x, y);
+        TilesScript.XCoordinate = x;
+        TilesScript.YCoordinate = y;
+        Tile.name = string.Format("{0}{1}", x, y);
         Tile.transform.localPosition = new Vector3(x, y, 0);
 
         TileGrid[x].Add(Tile);
+    }
+
+    void CreateVoids()
+    {
+
     }
 }
