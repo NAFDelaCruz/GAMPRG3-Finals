@@ -20,7 +20,12 @@ public class GenerateMap : MonoBehaviour
 
     [Header("Map Variables")]
     public int MapWidth;
-    public int MapHeight; 
+    public int MapHeight;
+
+    [Header("Map Void Variables")]
+    public int VoidCount;
+    public int MinVoidSize;
+    public int MaxVoidSize;
 
     [Tooltip("Controls how detailed the map is. Recommended value: 4-20")]
     public float Magnification;
@@ -43,6 +48,7 @@ public class GenerateMap : MonoBehaviour
 
         CreateTileSet();
         Generate();
+        //CreateVoids();
     }
 
     void CreateTileSet()
@@ -147,5 +153,31 @@ public class GenerateMap : MonoBehaviour
         }
 
         return TotalWeight;
+    }
+
+    void CountVoids()
+    {
+        for (int Index = 1; Index < VoidCount; Index++)
+        {
+
+            int X = Random.Range(0, MapWidth - 1);
+            int Y = Random.Range(0, MapHeight - 1);
+            int XVoidSize = Random.Range(MinVoidSize, MaxVoidSize);
+            int YVoidSize = Random.Range(MinVoidSize, MaxVoidSize);
+
+            int Size = YVoidSize;
+
+            if (XVoidSize > YVoidSize)
+                Size = XVoidSize;
+            CreateVoids(Size);
+        }
+    }
+
+    void CreateVoids(int Size)
+    {
+        for (int X = 0; X < Size; X++)
+        {
+               
+        }
     }
 }
