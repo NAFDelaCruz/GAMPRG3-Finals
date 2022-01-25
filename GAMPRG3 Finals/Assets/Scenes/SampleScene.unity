@@ -277,6 +277,12 @@ MonoBehaviour:
   Magnification: 7
   XOffset: 0
   YOffset: 0
+  VoidPerlinOctaves: 4
+  VoidLacunarity: 2
+  VoidPerlinMagnification: 100
+  VoidPerlinSelector: 0.325
+  VoidPerlinXOffset: 0
+  VoidPerlinYOffset: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
