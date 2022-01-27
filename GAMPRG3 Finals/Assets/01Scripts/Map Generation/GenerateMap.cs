@@ -101,8 +101,8 @@ public class GenerateMap : MonoBehaviour
                 CreateTile(TilePrefab, x, y);
             }
         }
-        LocateValidTile(0);
-        LocateValidTile(1);     
+
+        LocateStartAndEnd();   
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -186,20 +186,47 @@ public class GenerateMap : MonoBehaviour
         return TotalWeight;
     }
 
+    void LocateStartAndEnd()
+    {
+        bool IsStartInvalid = true, IsEndInvalid = true;
+
+        while (IsStartInvalid && IsEndInvalid)
+        {
+            int StartX = Random.Range(0, MapWidth - 1);
+            int StartY = Random.Range(0, MapHeight - 1);
+            int EndX = Random.Range(0, MapWidth - 1);
+            int EndY = Random.Range(0, MapHeight - 1);
+
+            if (GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle == false)
+            {
+                StartPoint = GameObject.Find(StartX + "" + StartY);
+                IsStartInvalid = false;
+                StartPoint.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+
+            if (GameObject.Find(EndX + "" + EndY).GetComponent<Tiles>().IsObstacle == false)
+            {
+                EndPoint = GameObject.Find(EndX + "" + EndY);
+                IsEndInvalid = false;
+                EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+            }
+        }
+    }
+
+    /*
     void LocateValidTile(int selector)
     {
-        int rand_x = Random.Range(0, MapWidth);
-        int rand_y = Random.Range(0, MapHeight);
+        int rand_x = Random.Range(0, MapWidth - 1);
+        int rand_y = Random.Range(0, MapHeight - 1);
         tileName = rand_x.ToString() + rand_y.ToString();
 
         GameObject targetTile = GameObject.Find(tileName).gameObject;
-        if (targetTile.GetComponent<Tiles>().Obstacle == true)
+        if (targetTile.GetComponent<Tiles>().IsObstacle == true)
         {
             Debug.Log("Target tile is invalid selecting a new tile");
             LocateValidTile(selector);
         }
 
-        //Debug.Log(tileName);
         GetTileObject(tileName, selector);
     }
 
@@ -217,7 +244,8 @@ public class GenerateMap : MonoBehaviour
         {
             Debug.Log("End Point");
             EndPoint = targetTile;
-            targetTile.GetComponent<SpriteRenderer>().color = Color.green;
+            targetTile.GetComponent<SpriteRenderer>().color = Color.cyan;
         }
     }
+    */
 }

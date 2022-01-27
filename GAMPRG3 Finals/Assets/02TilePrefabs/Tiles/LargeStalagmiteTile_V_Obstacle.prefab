@@ -97,4 +97,4 @@ MonoBehaviour:
   XCoordinate: 0
   YCoordinate: 0
   TileName: stalagmite_grass
-  Obstacle: 1
+  IsObstacle: 1

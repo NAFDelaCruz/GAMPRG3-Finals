@@ -6,7 +6,7 @@ public class Tiles : MonoBehaviour
 {
     public int XCoordinate, YCoordinate;
     public string TileName;
-    public bool Obstacle;
+    public bool IsObstacle;
 
     private void Start()
     {
