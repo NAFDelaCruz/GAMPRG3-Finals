@@ -96,5 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XCoordinate: 0
   YCoordinate: 0
-  PerlinValue: 0
-  TileName: 
+  TileName: dirt
+  Walkable: 1

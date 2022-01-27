@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3172309290290971285}
   - component: {fileID: -1303170453097112401}
   m_Layer: 0
-  m_Name: StonesTile_Walkable
+  m_Name: StalagmiteTile_V_Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XCoordinate: 0
   YCoordinate: 0
-  TileName: 
+  TileName: rock_grass
+  Obstacle: 0

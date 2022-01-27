@@ -277,6 +277,8 @@ MonoBehaviour:
   Magnification: 7
   XOffset: 0
   YOffset: 0
+  StartPoint: {fileID: 0}
+  EndPoint: {fileID: 0}
   VoidPerlinOctaves: 4
   VoidLacunarity: 2
   VoidPerlinMagnification: 100

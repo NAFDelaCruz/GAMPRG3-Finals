@@ -32,6 +32,11 @@ public class GenerateMap : MonoBehaviour
     [Tooltip("Shifts tiles down (-) or up (+).")]
     public int YOffset = 0; // v- +^
 
+    [Header("Start and End Points")]
+    public GameObject StartPoint;
+    public GameObject EndPoint;
+    string tileName;
+
     [Header("Map Void Variables")]
     [Tooltip("Recommened Values: 0-4.")]
     public int VoidPerlinOctaves;
@@ -50,7 +55,6 @@ public class GenerateMap : MonoBehaviour
     List<List<GameObject>> TilePrefabs = new List<List<GameObject>>();
     List<Dictionary<float, GameObject>> TileSets = new List<Dictionary<float, GameObject>>();
     GameObject TilePrefab;
-
     void Start()
     {
         //Each set for a list add here
@@ -97,6 +101,8 @@ public class GenerateMap : MonoBehaviour
                 CreateTile(TilePrefab, x, y);
             }
         }
+        LocateValidTile(0);
+        LocateValidTile(1);     
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -178,5 +184,40 @@ public class GenerateMap : MonoBehaviour
         }
 
         return TotalWeight;
+    }
+
+    void LocateValidTile(int selector)
+    {
+        int rand_x = Random.Range(0, MapWidth);
+        int rand_y = Random.Range(0, MapHeight);
+        tileName = rand_x.ToString() + rand_y.ToString();
+
+        GameObject targetTile = GameObject.Find(tileName).gameObject;
+        if (targetTile.GetComponent<Tiles>().Obstacle == true)
+        {
+            Debug.Log("Target tile is invalid selecting a new tile");
+            LocateValidTile(selector);
+        }
+
+        //Debug.Log(tileName);
+        GetTileObject(tileName, selector);
+    }
+
+    void GetTileObject(string tileName, int selector)
+    {
+        Debug.Log(tileName);
+        GameObject targetTile = GameObject.Find(tileName).gameObject;
+        if (selector == 0)
+        {
+            Debug.Log("Start Point");
+            StartPoint = targetTile;
+            targetTile.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        if (selector == 1)
+        {
+            Debug.Log("End Point");
+            EndPoint = targetTile;
+            targetTile.GetComponent<SpriteRenderer>().color = Color.green;
+        }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1270228873759067763}
   - component: {fileID: 3635797807953648467}
   m_Layer: 0
-  m_Name: PlainsTile_Walkable
+  m_Name: CaveFloorTile_V_Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XCoordinate: 0
   YCoordinate: 0
-  Abundance: 5
+  TileName: grass
+  Obstacle: 0

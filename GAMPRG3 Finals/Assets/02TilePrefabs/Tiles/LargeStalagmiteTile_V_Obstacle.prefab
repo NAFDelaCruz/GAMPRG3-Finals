@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 599307426768743895}
   - component: {fileID: 6149755158970734607}
   m_Layer: 0
-  m_Name: SteepMountainsTile_Obstacle
+  m_Name: LargeStalagmiteTile_V_Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XCoordinate: 0
   YCoordinate: 0
-  TileName: 
+  TileName: stalagmite_grass
+  Obstacle: 1
