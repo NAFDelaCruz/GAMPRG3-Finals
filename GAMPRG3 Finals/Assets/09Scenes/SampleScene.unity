@@ -256,6 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a485de981968ff4f817ecf7dc884aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VoidTilePrefab: {fileID: 8494953220889022684, guid: 510292389d26c5c48bd73235b77aada8,
+    type: 3}
   TerrainPrefabsChanceValues:
   - 200
   - 30
@@ -263,7 +265,6 @@ MonoBehaviour:
   - 15
   - 10
   - 7
-  - 5
   TerrainPrefabs:
   - {fileID: 7974283295438161950, guid: cb5325d90bf44774e96c50c6830f04e0, type: 3}
   - {fileID: 1270228873759067760, guid: b781c65dbbca7bb4990f9547c8acbb57, type: 3}
@@ -271,7 +272,6 @@ MonoBehaviour:
   - {fileID: 3172309290290971284, guid: 601aa7cbd3546424797059cc7e2c28cd, type: 3}
   - {fileID: 5627250820159548150, guid: 667f46b5e6a78fe41a2870110dcfd16d, type: 3}
   - {fileID: 599307426768743892, guid: 862d98dc182fdcf46b1d81bbdfaea89b, type: 3}
-  - {fileID: 8494953220889022684, guid: 510292389d26c5c48bd73235b77aada8, type: 3}
   MapWidth: 160
   MapHeight: 90
   Magnification: 7

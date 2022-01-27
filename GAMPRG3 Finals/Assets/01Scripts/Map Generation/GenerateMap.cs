@@ -9,6 +9,9 @@ using UnityEngine;
 
 public class GenerateMap : MonoBehaviour
 {
+    [Header("Default Values")]
+    public GameObject VoidTilePrefab;
+
     //For each set create these
     [Header("CaveTiles")]
     [Tooltip("Set chances from highest to lowest.")]
@@ -76,8 +79,6 @@ public class GenerateMap : MonoBehaviour
             TileSets.Add(PairTemp);
             SetNumber++;
         }
-
-        
     }
 
     void Generate()
@@ -96,8 +97,6 @@ public class GenerateMap : MonoBehaviour
                 CreateTile(TilePrefab, x, y);
             }
         }
-
-        //CountVoids();
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -137,6 +136,12 @@ public class GenerateMap : MonoBehaviour
         if (VoidPerlin > VoidPerlinSelector)
         {
             GameObject Tile = Instantiate(TilePrefab, gameObject.transform);
+            Tile.name = string.Format("{0}{1}", x, y);
+            Tile.transform.localPosition = new Vector3(x, y, 0);
+        }
+        else
+        {
+            GameObject Tile = Instantiate(VoidTilePrefab, gameObject.transform);
             Tile.name = string.Format("{0}{1}", x, y);
             Tile.transform.localPosition = new Vector3(x, y, 0);
         }
