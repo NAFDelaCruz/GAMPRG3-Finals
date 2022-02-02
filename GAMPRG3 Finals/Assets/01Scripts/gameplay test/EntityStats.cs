@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntityStats : MonoBehaviour
 {
     //public int Level;
-    //public int HP;
+    public int HP;
     //public int AP;
     //public int STR;
     //public int INT;

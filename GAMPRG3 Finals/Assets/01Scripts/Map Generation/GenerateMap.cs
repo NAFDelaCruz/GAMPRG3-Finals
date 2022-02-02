@@ -102,7 +102,8 @@ public class GenerateMap : MonoBehaviour
             }
         }
 
-        LocateStartAndEnd();   
+        LocateStart();   
+        LocateEnd();   
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -186,16 +187,14 @@ public class GenerateMap : MonoBehaviour
         return TotalWeight;
     }
 
-    void LocateStartAndEnd()
+    void LocateStart()
     {
-        bool IsStartInvalid = true, IsEndInvalid = true;
+        bool IsStartInvalid = true;
 
-        while (IsStartInvalid && IsEndInvalid)
+        while (IsStartInvalid)
         {
             int StartX = Random.Range(0, MapWidth - 1);
             int StartY = Random.Range(0, MapHeight - 1);
-            int EndX = Random.Range(0, MapWidth - 1);
-            int EndY = Random.Range(0, MapHeight - 1);
 
             if (GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle == false)
             {
@@ -203,6 +202,17 @@ public class GenerateMap : MonoBehaviour
                 IsStartInvalid = false;
                 StartPoint.GetComponent<SpriteRenderer>().color = Color.red;
             }
+        }
+    }
+
+    void LocateEnd()
+    {
+        bool IsEndInvalid = true;
+
+        while (IsEndInvalid)
+        {
+            int EndX = Random.Range(0, MapWidth - 1);
+            int EndY = Random.Range(0, MapHeight - 1);
 
             if (GameObject.Find(EndX + "" + EndY).GetComponent<Tiles>().IsObstacle == false)
             {
@@ -211,6 +221,7 @@ public class GenerateMap : MonoBehaviour
                 EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
             }
         }
+
     }
 
     /*
