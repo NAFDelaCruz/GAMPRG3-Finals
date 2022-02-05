@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2050053372504443750}
   - component: {fileID: 2050053372504443751}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050053372504443748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7788305, y: 15.9090605, z: 277.6022}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 245490547
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7252216144125549621, guid: cae8cf3443c8f4043bbbade7825d8c7c,
     type: 3}

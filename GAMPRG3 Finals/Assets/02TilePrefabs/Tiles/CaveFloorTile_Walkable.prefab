@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1321029900280101760}
   - component: {fileID: 5442622191233145308}
   - component: {fileID: 6256589373074720615}
+  - component: {fileID: -1998843493567881422}
   m_Layer: 0
   m_Name: CaveFloorTile_Walkable
   m_TagString: Untagged
@@ -97,4 +98,17 @@ MonoBehaviour:
   XCoordinate: 0
   YCoordinate: 0
   TileName: dirt
-  Walkable: 1
+  IsObstacle: 0
+--- !u!65 &-1998843493567881422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974283295438161950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

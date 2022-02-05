@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7510597952539879515}
   - component: {fileID: 966590131341355739}
   - component: {fileID: -6064891995982732750}
+  - component: {fileID: -8607453273806297665}
   m_Layer: 0
   m_Name: LargeStalagmiteTile_Obstacle
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   YCoordinate: 0
   TileName: stalagmite_dirt
   IsObstacle: 1
+--- !u!65 &-8607453273806297665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627250820159548150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

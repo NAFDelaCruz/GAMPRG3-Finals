@@ -145,6 +145,8 @@ public class GenerateMap : MonoBehaviour
             GameObject Tile = Instantiate(TilePrefab, gameObject.transform);
             Tile.name = string.Format("{0}{1}", x, y);
             Tile.transform.localPosition = new Vector3(x, y, 0);
+            Tile.GetComponent<Tiles>().XCoordinate = x;
+            Tile.GetComponent<Tiles>().YCoordinate = y;
         }
         else
         {
