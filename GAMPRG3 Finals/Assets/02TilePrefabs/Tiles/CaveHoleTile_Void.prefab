@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5688965164652692513}
   - component: {fileID: 6202940165778513753}
   - component: {fileID: 6719408651710542955}
-  - component: {fileID: -7829627424664560281}
+  - component: {fileID: -6551425843902881064}
   m_Layer: 0
   m_Name: CaveHoleTile_Void
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   YCoordinate: 0
   TileName: void
   IsObstacle: 1
---- !u!65 &-7829627424664560281
+--- !u!65 &-6551425843902881064
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 0.75, y: 0.75, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}

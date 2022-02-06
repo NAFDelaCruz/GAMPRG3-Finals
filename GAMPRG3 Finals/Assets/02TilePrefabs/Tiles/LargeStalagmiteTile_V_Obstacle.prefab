@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 599307426768743894}
   - component: {fileID: 599307426768743895}
   - component: {fileID: 6149755158970734607}
-  - component: {fileID: 8527617035208370889}
+  - component: {fileID: 1492216454220994448}
   m_Layer: 0
   m_Name: LargeStalagmiteTile_V_Obstacle
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   YCoordinate: 0
   TileName: stalagmite_grass
   IsObstacle: 1
---- !u!65 &8527617035208370889
+--- !u!65 &1492216454220994448
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 0.75, y: 0.75, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1270228873759067762}
   - component: {fileID: 1270228873759067763}
   - component: {fileID: 3635797807953648467}
-  - component: {fileID: 3016959871151024028}
+  - component: {fileID: -7240132423744526992}
   m_Layer: 0
   m_Name: CaveFloorTile_V_Walkable
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   YCoordinate: 0
   TileName: grass
   IsObstacle: 0
---- !u!65 &3016959871151024028
+--- !u!65 &-7240132423744526992
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 0.75, y: 0.75, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
