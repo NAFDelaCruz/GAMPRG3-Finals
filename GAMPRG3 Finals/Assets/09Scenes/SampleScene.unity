@@ -322,6 +322,7 @@ MonoBehaviour:
   - {fileID: 4347820926617255558, guid: 6cd4a08457b1d924ca06cb331b15a97e, type: 3}
   - {fileID: 8903513203843796560, guid: 5078f500c10f2f749be66b8055d23b33, type: 3}
   - {fileID: 4268109712708635802, guid: e12bbd03753c46e4e945e273c8030d91, type: 3}
+  SpawnTiles: []
   Tiles: []
 --- !u!4 &760755504
 Transform:
@@ -330,7 +331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760755502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

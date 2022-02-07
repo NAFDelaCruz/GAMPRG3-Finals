@@ -8,6 +8,7 @@ public class UnitSpawner : MonoBehaviour
     public GameObject Map;
     public GameObject[] TestPartyUnits;
     public List<GameObject> SpawnTiles;
+    public Collider2D[] Tiles;
 
     GenerateMap generateMap;
 
@@ -15,25 +16,16 @@ public class UnitSpawner : MonoBehaviour
     {
         generateMap = Map.GetComponent<GenerateMap>();
         Instantiate(TestUnit, generateMap.StartPoint.gameObject.transform);
+
+        Physics2D.SyncTransforms();
+        Tiles = Physics2D.OverlapBoxAll(generateMap.StartPoint.transform.position, new Vector2(1.5f, 1.5f), 0f);
         
-        int StartX = generateMap.StartPoint.GetComponent<Tiles>().XCoordinate;
-        int StartY = generateMap.StartPoint.GetComponent<Tiles>().YCoordinate;
+        foreach (Collider2D tile in Tiles)
+        {
+            SpawnTiles.Add(tile.gameObject);
+        }
 
-        //NW N and NE Tiles
-        SpawnTiles.Add(GameObject.Find(StartX - 1 + "" + (StartY + 1)));
-        SpawnTiles.Add(GameObject.Find(StartX + "" + (StartY + 1)));
-        SpawnTiles.Add(GameObject.Find(StartX + 1 + "" + (StartY + 1)));
-        
-        //W Player and E Tiles
-        SpawnTiles.Add(GameObject.Find(StartX - 1 + "" + StartY));
-        SpawnTiles.Add(GameObject.Find(StartX + "" + StartY));
-        SpawnTiles.Add(GameObject.Find(StartX + 1 + "" + StartY));
-
-
-        //SW S and SE Tiles
-        SpawnTiles.Add(GameObject.Find(StartX - 1 + "" + (StartY - 1)));
-        SpawnTiles.Add(GameObject.Find(StartX + "" + (StartY - 1)));
-        SpawnTiles.Add(GameObject.Find(StartX + 1 + "" + (StartY - 1)));
+        Sort();
 
         int TileIndex = 1;
         int UnitIndex = 0;
@@ -69,5 +61,15 @@ public class UnitSpawner : MonoBehaviour
                 UnitIndex++;
             }
         }
+    }
+
+    void Sort()
+    {
+        SpawnTiles.Sort(SortByCoord);
+    }
+
+    static int SortByCoord(GameObject x, GameObject y)
+    {
+        return x.name.CompareTo(y.name);
     }
 }
