@@ -356,6 +356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6256589373074720615, guid: cb5325d90bf44774e96c50c6830f04e0,
         type: 3}
+      propertyPath: IsObstacle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256589373074720615, guid: cb5325d90bf44774e96c50c6830f04e0,
+        type: 3}
       propertyPath: XCoordinate
       value: 1
       objectReference: {fileID: 0}
@@ -426,6 +431,11 @@ PrefabInstance:
     - target: {fileID: 1321029900280101760, guid: cb5325d90bf44774e96c50c6830f04e0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256589373074720615, guid: cb5325d90bf44774e96c50c6830f04e0,
+        type: 3}
+      propertyPath: IsObstacle
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7974283295438161950, guid: cb5325d90bf44774e96c50c6830f04e0,
@@ -842,6 +852,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6256589373074720615, guid: cb5325d90bf44774e96c50c6830f04e0,
         type: 3}
+      propertyPath: IsObstacle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256589373074720615, guid: cb5325d90bf44774e96c50c6830f04e0,
+        type: 3}
       propertyPath: YCoordinate
       value: 1
       objectReference: {fileID: 0}
@@ -979,6 +994,7 @@ MonoBehaviour:
   - {fileID: 5576698955199822362, guid: 2d3b06e64fef2b44d823c71252370ca2, type: 3}
   - {fileID: 4317315179822752644, guid: fb98fe8a97cc1ab4c98d09e6c9a97041, type: 3}
   SpawnTiles: []
+  Tiles: []
 --- !u!4 &1959224265
 Transform:
   m_ObjectHideFlags: 0
