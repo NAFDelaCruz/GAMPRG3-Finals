@@ -23,16 +23,15 @@ public class GenerateMap : MonoBehaviour
     [Header("Map Variables")]
     public int MapWidth;
     public int MapHeight;
-
     [Tooltip("Controls how detailed the map is. Recommended value: 4-20")]
     public float Magnification;
-
     [Tooltip("Shifts tiles to the left (-) or right (+).")]
     public int XOffset = 0; // <- +>
     [Tooltip("Shifts tiles down (-) or up (+).")]
     public int YOffset = 0; // v- +^
 
     [Header("Start and End Points")]
+    public Collider2D[] Tiles;
     public GameObject StartPoint;
     public GameObject EndPoint;
     string tileName;
@@ -192,13 +191,23 @@ public class GenerateMap : MonoBehaviour
     void LocateStart()
     {
         bool IsStartInvalid = true;
+        Physics2D.SyncTransforms();
 
         while (IsStartInvalid)
         {
             int StartX = Random.Range(0, MapWidth - 1);
             int StartY = Random.Range(0, MapHeight - 1);
+            int ValidTileCount = 0;
+            
+            Tiles = Physics2D.OverlapBoxAll(new Vector2(StartX, StartY), new Vector2(1.5f, 1.5f), 0f);
 
-            if (GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle == false)
+            foreach (Collider2D tile in Tiles)
+            {
+                if (!tile.GetComponent<Tiles>().IsObstacle)
+                    ValidTileCount++;
+            }
+
+            if (ValidTileCount >= 4 && GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle == false)
             {
                 StartPoint = GameObject.Find(StartX + "" + StartY);
                 IsStartInvalid = false;

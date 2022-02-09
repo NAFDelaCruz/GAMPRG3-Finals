@@ -8,7 +8,6 @@ public class UnitSpawner : MonoBehaviour
     public GameObject Map;
     public GameObject[] TestPartyUnits;
     public List<GameObject> SpawnTiles;
-    public Collider2D[] Tiles;
 
     GenerateMap generateMap;
 
@@ -17,10 +16,7 @@ public class UnitSpawner : MonoBehaviour
         generateMap = Map.GetComponent<GenerateMap>();
         Instantiate(TestUnit, generateMap.StartPoint.gameObject.transform);
 
-        Physics2D.SyncTransforms();
-        Tiles = Physics2D.OverlapBoxAll(generateMap.StartPoint.transform.position, new Vector2(1.5f, 1.5f), 0f);
-        
-        foreach (Collider2D tile in Tiles)
+        foreach (Collider2D tile in generateMap.Tiles)
         {
             SpawnTiles.Add(tile.gameObject);
         }
