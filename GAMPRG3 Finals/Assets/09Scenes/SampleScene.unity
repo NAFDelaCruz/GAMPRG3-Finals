@@ -277,6 +277,7 @@ MonoBehaviour:
   Magnification: 7
   XOffset: 0
   YOffset: 0
+  Tiles: []
   StartPoint: {fileID: 0}
   EndPoint: {fileID: 0}
   VoidPerlinOctaves: 4
@@ -323,7 +324,6 @@ MonoBehaviour:
   - {fileID: 8903513203843796560, guid: 5078f500c10f2f749be66b8055d23b33, type: 3}
   - {fileID: 4268109712708635802, guid: e12bbd03753c46e4e945e273c8030d91, type: 3}
   SpawnTiles: []
-  Tiles: []
 --- !u!4 &760755504
 Transform:
   m_ObjectHideFlags: 0

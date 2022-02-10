@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9083857087602715868}
   - component: {fileID: 6671003955695382263}
   - component: {fileID: 3360015360012397230}
+  - component: {fileID: -7382586714778184261}
+  - component: {fileID: 3101181792869791715}
   m_Layer: 0
   m_Name: Bow_Man
   m_TagString: Untagged
@@ -101,3 +103,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7382586714778184261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876529308232886162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b079e91c4e233a7469405a2f231ddb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRange: 3
+  ActionPoints: 6
+  PossibleTiles: []
+  SelectedTiles: []
+--- !u!114 &3101181792869791715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876529308232886162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be366f225682c3459ac9cf5c13e708f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Entities: {fileID: 0}
+  EntityList: []
