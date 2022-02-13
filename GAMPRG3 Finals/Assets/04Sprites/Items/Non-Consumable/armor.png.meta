@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 0350867279d31ba49b393e7d0bd32f44
+guid: 27efd8a9f0ee08448951cc7736e361fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1948520394338802384
-    second: Flame_Spritesheet_0
+      213: -1128947775675819744
+    second: armor_0
   - first:
-      213: -7322998991230458273
-    second: Flame_Spritesheet_1
+      213: -5367567284864621945
+    second: armor_1
   - first:
-      213: 7574149906001715108
-    second: Flame_Spritesheet_2
+      213: -504574306490611350
+    second: armor_2
   - first:
-      213: 1923291633723963957
-    second: Flame_Spritesheet_3
+      213: 7973886625310189405
+    second: armor_3
   - first:
-      213: -8809316372281257464
-    second: Flame_Spritesheet_4
+      213: 3072967742494045084
+    second: armor_4
+  - first:
+      213: -9053114588808880918
+    second: armor_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_Spritesheet_0
+      name: armor_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da1b2699f88a0b10800000000000000
-      internalID: 1948520394338802384
+      spriteID: 02910ecbafb2550f0800000000000000
+      internalID: -1128947775675819744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_1
+      name: armor_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562a25673b7f5a90800000000000000
-      internalID: -7322998991230458273
+      spriteID: 782e2a53ef19285b0800000000000000
+      internalID: -5367567284864621945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_2
+      name: armor_2
       rect:
         serializedVersion: 2
         x: 32
@@ -170,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4af5aceb539cc1960800000000000000
-      internalID: 7574149906001715108
+      spriteID: a6986d277546ff8f0800000000000000
+      internalID: -504574306490611350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_3
+      name: armor_3
       rect:
         serializedVersion: 2
         x: 0
@@ -191,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af8930d87e0ba10800000000000000
-      internalID: 1923291633723963957
+      spriteID: d572ad463afe8ae60800000000000000
+      internalID: 7973886625310189405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_4
+      name: armor_4
       rect:
         serializedVersion: 2
         x: 16
@@ -212,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8029424ee650fb580800000000000000
-      internalID: -8809316372281257464
+      spriteID: c93779961ef55aa20800000000000000
+      internalID: 3072967742494045084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecd3273f30ec5280800000000000000
+      internalID: -9053114588808880918
       vertices: []
       indices: 
       edges: []
@@ -221,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5892fdd4b9dc59747a0ac464745019ec
+    spriteID: a67fee74f67bad04692f45aea93dc8a7
     internalID: 0
     vertices: []
     indices: 

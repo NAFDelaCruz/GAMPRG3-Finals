@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 0350867279d31ba49b393e7d0bd32f44
+guid: be9ebf06d41ea1140a9c652ab23fad78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1948520394338802384
-    second: Flame_Spritesheet_0
+      213: -415446080585258355
+    second: bow_0
   - first:
-      213: -7322998991230458273
-    second: Flame_Spritesheet_1
+      213: 8952162787185664858
+    second: bow_1
   - first:
-      213: 7574149906001715108
-    second: Flame_Spritesheet_2
+      213: -434252183827366392
+    second: bow_2
   - first:
-      213: 1923291633723963957
-    second: Flame_Spritesheet_3
+      213: 1131549020000966294
+    second: bow_3
   - first:
-      213: -8809316372281257464
-    second: Flame_Spritesheet_4
+      213: -7999427661029459236
+    second: bow_4
+  - first:
+      213: -4041009300170039426
+    second: bow_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_Spritesheet_0
+      name: bow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da1b2699f88a0b10800000000000000
-      internalID: 1948520394338802384
+      spriteID: d8a2367adf90c3af0800000000000000
+      internalID: -415446080585258355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_1
+      name: bow_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562a25673b7f5a90800000000000000
-      internalID: -7322998991230458273
+      spriteID: a532ca5df987c3c70800000000000000
+      internalID: 8952162787185664858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_2
+      name: bow_2
       rect:
         serializedVersion: 2
         x: 32
@@ -170,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4af5aceb539cc1960800000000000000
-      internalID: 7574149906001715108
+      spriteID: 80e380880f939f9f0800000000000000
+      internalID: -434252183827366392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_3
+      name: bow_3
       rect:
         serializedVersion: 2
         x: 0
@@ -191,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af8930d87e0ba10800000000000000
-      internalID: 1923291633723963957
+      spriteID: 6965917a6d114bf00800000000000000
+      internalID: 1131549020000966294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_4
+      name: bow_4
       rect:
         serializedVersion: 2
         x: 16
@@ -212,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8029424ee650fb580800000000000000
-      internalID: -8809316372281257464
+      spriteID: cdab7e1dce25cf090800000000000000
+      internalID: -7999427661029459236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f9051a3737be7c0800000000000000
+      internalID: -4041009300170039426
       vertices: []
       indices: 
       edges: []
@@ -221,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5892fdd4b9dc59747a0ac464745019ec
+    spriteID: 9ee9df3ad6d3b5042ad069be405973eb
     internalID: 0
     vertices: []
     indices: 

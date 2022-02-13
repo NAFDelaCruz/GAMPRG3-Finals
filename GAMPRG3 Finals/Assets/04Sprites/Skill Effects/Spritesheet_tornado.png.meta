@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 0350867279d31ba49b393e7d0bd32f44
+guid: 548e1f883df97cd44949001b3e1c1738
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1948520394338802384
-    second: Flame_Spritesheet_0
+      213: 5181853670049332551
+    second: Spritesheet_tornado_0
   - first:
-      213: -7322998991230458273
-    second: Flame_Spritesheet_1
+      213: -7249107950170651776
+    second: Spritesheet_tornado_1
   - first:
-      213: 7574149906001715108
-    second: Flame_Spritesheet_2
-  - first:
-      213: 1923291633723963957
-    second: Flame_Spritesheet_3
-  - first:
-      213: -8809316372281257464
-    second: Flame_Spritesheet_4
+      213: -1194955832916658497
+    second: Spritesheet_tornado_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_Spritesheet_0
+      name: Spritesheet_tornado_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +122,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da1b2699f88a0b10800000000000000
-      internalID: 1948520394338802384
+      spriteID: 74d38515574a9e740800000000000000
+      internalID: 5181853670049332551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_1
+      name: Spritesheet_tornado_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,35 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562a25673b7f5a90800000000000000
-      internalID: -7322998991230458273
+      spriteID: 0834e9b0abef56b90800000000000000
+      internalID: -7249107950170651776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4af5aceb539cc1960800000000000000
-      internalID: 7574149906001715108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flame_Spritesheet_3
+      name: Spritesheet_tornado_2
       rect:
         serializedVersion: 2
         x: 0
@@ -191,29 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af8930d87e0ba10800000000000000
-      internalID: 1923291633723963957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flame_Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8029424ee650fb580800000000000000
-      internalID: -8809316372281257464
+      spriteID: fb6b8b8400aaa6fe0800000000000000
+      internalID: -1194955832916658497
       vertices: []
       indices: 
       edges: []
@@ -221,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5892fdd4b9dc59747a0ac464745019ec
+    spriteID: 0881872d9a50e2b44a5e8ce7dee7ed1f
     internalID: 0
     vertices: []
     indices: 

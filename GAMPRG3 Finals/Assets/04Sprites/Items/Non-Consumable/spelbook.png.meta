@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 0350867279d31ba49b393e7d0bd32f44
+guid: 27e906a5823aa1e4e9562e28bef259ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1948520394338802384
-    second: Flame_Spritesheet_0
+      213: -2013234776518197080
+    second: spelbook_0
   - first:
-      213: -7322998991230458273
-    second: Flame_Spritesheet_1
+      213: 2377648236367622673
+    second: spelbook_1
   - first:
-      213: 7574149906001715108
-    second: Flame_Spritesheet_2
+      213: 7133682026860246852
+    second: spelbook_2
   - first:
-      213: 1923291633723963957
-    second: Flame_Spritesheet_3
+      213: 645415280238128648
+    second: spelbook_3
   - first:
-      213: -8809316372281257464
-    second: Flame_Spritesheet_4
+      213: 7131521601267323577
+    second: spelbook_4
+  - first:
+      213: 1390637004626880935
+    second: spelbook_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_Spritesheet_0
+      name: spelbook_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da1b2699f88a0b10800000000000000
-      internalID: 1948520394338802384
+      spriteID: 8a08b2823ad8f04e0800000000000000
+      internalID: -2013234776518197080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_1
+      name: spelbook_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562a25673b7f5a90800000000000000
-      internalID: -7322998991230458273
+      spriteID: 112b681497a1ff020800000000000000
+      internalID: 2377648236367622673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_2
+      name: spelbook_2
       rect:
         serializedVersion: 2
         x: 32
@@ -170,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4af5aceb539cc1960800000000000000
-      internalID: 7574149906001715108
+      spriteID: 447f79fe10eeff260800000000000000
+      internalID: 7133682026860246852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_3
+      name: spelbook_3
       rect:
         serializedVersion: 2
         x: 0
@@ -191,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af8930d87e0ba10800000000000000
-      internalID: 1923291633723963957
+      spriteID: 80ee33f17c9f4f800800000000000000
+      internalID: 645415280238128648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flame_Spritesheet_4
+      name: spelbook_4
       rect:
         serializedVersion: 2
         x: 16
@@ -212,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8029424ee650fb580800000000000000
-      internalID: -8809316372281257464
+      spriteID: 9b25097ac1148f260800000000000000
+      internalID: 7131521601267323577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spelbook_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a96c40ecf88c4310800000000000000
+      internalID: 1390637004626880935
       vertices: []
       indices: 
       edges: []
@@ -221,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5892fdd4b9dc59747a0ac464745019ec
+    spriteID: 2ad1a708e0a2a7f4788aefff0969b224
     internalID: 0
     vertices: []
     indices: 
