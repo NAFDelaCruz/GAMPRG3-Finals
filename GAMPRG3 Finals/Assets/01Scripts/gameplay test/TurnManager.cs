@@ -31,6 +31,7 @@ public class TurnManager : MonoBehaviour
     void ObtainEntities()
     {
         for (int i = 0; i < Entities.transform.childCount; i++)
+
         {
             EntityList.Add(new EntityPriority() { Entity = Entities.transform.GetChild(i).gameObject, Entity_AGI = Entities.transform.GetChild(i).GetComponent<EntityStats>().AGI });
         }
