@@ -5,21 +5,26 @@ using System;
 
 public class UnitActionController : MonoBehaviour
 {
+    [Header("Entity Stats")]
     public float AttackRange;
     public int ActionPoints;
 
-    int CurrentActionPoints;
-    string TileAction;
+    [Header("Collections")]
+    Collider2D[] CollidedTiles;
+    List<GameObject> AvailableTiles;
+    List<GameObject> ValidTiles;
+    public List<GameObject> SelectedTiles;
+    public List<string> SelectedTileActions;
+
+    [Header("Color Code")]
     Color MoveColor = Color.blue;
     Color SelectedMoveColor = Color.cyan;
     Color AttackColor = Color.magenta;
     Color SelectedAttackColor = new Color(221, 160, 221, 0.5f);
-    
-    public Collider2D[] CollidedTiles;
-    public List<GameObject> AvailableTiles;
-    public List<GameObject> ValidTiles;
-    public List<GameObject> SelectedTiles;
-    public List<string> SelectedTileActions;
+
+    [Header("Tracking Variables")]
+    int CurrentActionPoints;
+    string TileAction;
 
     private void Start()
     {

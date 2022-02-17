@@ -4,70 +4,158 @@ using UnityEngine;
 
 public class LevellingScript : MonoBehaviour
 {
+    [Header("Set Components")]
     public EntityStats entityStats;
 
+    [Header("HP Stat Values")]
+    public float HPStartChance;
+    public float HPBaseChance;
+    public float HPChanceMultiplier;
+
+    [Header("AGI Stat Values")]
+    public float AGIStartChance;
+    public float AGIBaseChance;
+    public float AGIChanceMultiplier;
+
+    [Header("SRT Stat Values")]
+    public float STRStartChance;
+    public float STRBaseChance;
+    public float STRChanceMultiplier;
+
+    [Header("INT Stat Values")]
+    public float INTStartChance;
+    public float INTBaseChance;
+    public float INTChanceMultiplier;
+
+    [Header("DEF Stat Values")]
+    public float DEFStartChance;
+    public float DEFBaseChance;
+    public float DEFChanceMultiplier;
+
+    [Header("CON Stat Values")]
+    public float CONStartChance;
+    public float CONBaseChance;
+    public float CONChanceMultiplier;
+
+    [Header("Tracking Variables")]
     int statIncrease;
+
     void Start()
     {
-        entityStats = this.gameObject.GetComponent<EntityStats>();
-        if (entityStats == null)
-        {
-            Debug.Log("No stat script found");
-        }
-        else
-        {
-            Debug.Log("Script Found");
-        }
+        entityStats = gameObject.GetComponent<EntityStats>();
     }
 
     public void LevelUp()
     {
         entityStats.EXP = entityStats.EXP - entityStats.MaxEXP;
         entityStats.Level++;
-        StatTest(entityStats.HP_B);
-        //Insert for other stats
-        //AGI
-        //STR
-        //INT
-        //DEF
-        //CON
+
+        entityStats.HP += StatHP(entityStats.HP_B);
+        entityStats.AGI += StatAGI(entityStats.AGI_B);
+        entityStats.STR += StatAGI(entityStats.STR_B);
+        entityStats.INT += StatAGI(entityStats.INT_B);
+        entityStats.DEF += StatAGI(entityStats.DEF_B);
+        entityStats.CON += StatAGI(entityStats.CON_B);
     }
     
-    
-
     public float GenerateNumber()
     {
         float rng = Random.Range(1, 0);
         return rng;
     }
 
-    public int StatTest(float statBias)
+    public int IncreaseStat(float startChance, float baseChance, float chanceMultiplier)
     {
-        bool continueIncrease = true;
-        float currentChance = 0;
+        float currentChance = startChance;
         int statIncrease = 0;
-        float rng = GenerateNumber();
-        //Checks if this stat should increase
-        if (rng > entityStats.HP_B)
+
+        while (true)
         {
-            while (continueIncrease)
+            float rng = GenerateNumber();
+            if (rng >= currentChance)
             {
-                rng = GenerateNumber();
-                if (rng >= currentChance)
-                {
-                    statIncrease++;
-                    currentChance = currentChance * 2; //0.0 -> 0.125 -> 0.25 > 0.5 -> 1
-                    if (currentChance == 0)
-                    {
-                        currentChance = 0.125f;
-                    }
-                }
-                else
-                {
-                    break;
-                }
+                statIncrease++;
+                currentChance = currentChance * chanceMultiplier;
+
+                if (currentChance == 0)
+                    currentChance = baseChance;
             }
+            else
+                break;
         }
+
+        return statIncrease;
+    }
+
+    public int StatHP(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(HPStartChance, HPBaseChance, HPChanceMultiplier);
+
+        return statIncrease;
+    }
+
+    public int StatAGI(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(AGIStartChance, AGIBaseChance, AGIChanceMultiplier);
+
+        return statIncrease;
+    }
+
+    public int StatSTR(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(STRStartChance, STRBaseChance, STRChanceMultiplier);
+
+        return statIncrease;
+    }
+
+    public int StatINT(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(0, 0.125f, 2);
+
+        return statIncrease;
+    }
+
+    public int StatDEF(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(DEFStartChance, DEFBaseChance, DEFChanceMultiplier);
+
+        return statIncrease;
+    }
+
+    public int StatCON(float statBias)
+    {
+        float rng = GenerateNumber();
+        int statIncrease = new int();
+
+        //Checks if this stat should increase
+        if (rng > statBias)
+            statIncrease = IncreaseStat(CONStartChance, CONBaseChance, CONChanceMultiplier);
+
         return statIncrease;
     }
 }

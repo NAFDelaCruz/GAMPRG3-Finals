@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
+    [Header("Set Components")]
     public GameObject TestUnit;
     public GameObject Map;
     public GameObject[] TestPartyUnits;
