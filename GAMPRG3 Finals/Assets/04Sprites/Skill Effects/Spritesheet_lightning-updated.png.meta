@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 9cc7b4e0bf2d5b543af610b7d71e9f87
+guid: d7e686c4b4be4ff4590d46206e73f6a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -84909484625897062
-    second: Spritesheet_attk-UP_0
+      213: 113312426652195198
+    second: Spritesheet_lightning-updated_0
   - first:
-      213: 6102305389472696353
-    second: Spritesheet_attk-UP_1
+      213: 7570749639397939010
+    second: Spritesheet_lightning-updated_1
   - first:
-      213: 896635339622539653
-    second: Spritesheet_attk-UP_2
+      213: -8164288840640833504
+    second: Spritesheet_lightning-updated_2
   - first:
-      213: 2416141805249419295
-    second: Spritesheet_attk-UP_3
+      213: -6885094664833095044
+    second: Spritesheet_lightning-updated_3
+  - first:
+      213: -3609373646402578216
+    second: Spritesheet_lightning-updated_4
+  - first:
+      213: -8097087892601270893
+    second: Spritesheet_lightning-updated_5
+  - first:
+      213: 5697490671264275608
+    second: Spritesheet_lightning-updated_6
+  - first:
+      213: 3996652354004966909
+    second: Spritesheet_lightning-updated_7
+  - first:
+      213: 5895079484224514489
+    second: Spritesheet_lightning-updated_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,7 +126,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_attk-UP_0
+      name: Spritesheet_lightning-updated_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79dd3b3d01929100800000000000000
+      internalID: 113312426652195198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_lightning-updated_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2471bbb7fa4b01960800000000000000
+      internalID: 7570749639397939010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_lightning-updated_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028dae14e8e92be80800000000000000
+      internalID: -8164288840640833504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_lightning-updated_3
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a99dfca064752def0800000000000000
-      internalID: -84909484625897062
+      spriteID: c7aafa191ea3370a0800000000000000
+      internalID: -6885094664833095044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_attk-UP_1
+      name: Spritesheet_lightning-updated_4
       rect:
         serializedVersion: 2
         x: 16
@@ -146,14 +224,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 128c87a9b6ebfa450800000000000000
-      internalID: 6102305389472696353
+      spriteID: 8d89488bacde8edc0800000000000000
+      internalID: -3609373646402578216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_attk-UP_2
+      name: Spritesheet_lightning-updated_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d826e367d51af80800000000000000
+      internalID: -8097087892601270893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_lightning-updated_6
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 581634f371d717c00800000000000000
-      internalID: 896635339622539653
+      spriteID: 89c1fc3349d811f40800000000000000
+      internalID: 5697490671264275608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_attk-UP_3
+      name: Spritesheet_lightning-updated_7
       rect:
         serializedVersion: 2
         x: 16
@@ -188,8 +287,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18dcdcab2cd78120800000000000000
-      internalID: 2416141805249419295
+      spriteID: dfdd13b0426f67730800000000000000
+      internalID: 3996652354004966909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_lightning-updated_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b925e3be878fc150800000000000000
+      internalID: 5895079484224514489
       vertices: []
       indices: 
       edges: []
@@ -197,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: da443e99bd639b74583b4e001714bd1c
+    spriteID: e3a1df5fc87b0c74f8cb78dd34587618
     internalID: 0
     vertices: []
     indices: 

@@ -1,43 +1,25 @@
 fileFormatVersion: 2
-guid: 349f99a620332444895efba5ceacb7f5
+guid: fddbbbf3b488e394ba0a7f942d6a874e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1792056541667752236
-    second: Spritesheet_heal_0
+      213: -5740590291664969660
+    second: Spritesheet_attack up-updated_0
   - first:
-      213: -3707198557677620730
-    second: Spritesheet_heal_1
+      213: -1702089080719881918
+    second: Spritesheet_attack up-updated_1
   - first:
-      213: 8325689242260847745
-    second: Spritesheet_heal_2
+      213: 4598617120798542385
+    second: Spritesheet_attack up-updated_2
   - first:
-      213: 3103007659178191887
-    second: Spritesheet_heal_3
+      213: -4686157132149157056
+    second: Spritesheet_attack up-updated_3
   - first:
-      213: 4954023677176685069
-    second: Spritesheet_heal_4
+      213: -1627805292871134716
+    second: Spritesheet_attack up-updated_4
   - first:
-      213: -8202171329730300968
-    second: Spritesheet_heal_5
-  - first:
-      213: 4996785755355950658
-    second: Spritesheet_heal_6
-  - first:
-      213: 3734914327528310977
-    second: Spritesheet_heal_7
-  - first:
-      213: 5666584035222630449
-    second: Spritesheet_heal_8
-  - first:
-      213: -3175081444091962098
-    second: Spritesheet_heal_9
-  - first:
-      213: 3705010634465996836
-    second: Spritesheet_heal_10
-  - first:
-      213: -3202705428320226433
-    second: Spritesheet_heal_11
+      213: 2420469688221166844
+    second: Spritesheet_attack up-updated_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,91 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_heal_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c29758f0ee9aed810800000000000000
-      internalID: 1792056541667752236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 602f8c9ad826d8cc0800000000000000
-      internalID: -3707198557677620730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18cbf33214aca8370800000000000000
-      internalID: 8325689242260847745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ce1ac8609101b20800000000000000
-      internalID: 3103007659178191887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_4
+      name: Spritesheet_attack up-updated_0
       rect:
         serializedVersion: 2
         x: 0
@@ -233,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d02adfe694a30c440800000000000000
-      internalID: 4954023677176685069
+      spriteID: 440e0407b835550b0800000000000000
+      internalID: -5740590291664969660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_heal_5
+      name: Spritesheet_attack up-updated_1
       rect:
         serializedVersion: 2
         x: 16
@@ -254,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d33880f1a80c2e80800000000000000
-      internalID: -8202171329730300968
+      spriteID: 249ce97cff6f068e0800000000000000
+      internalID: -1702089080719881918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_heal_6
+      name: Spritesheet_attack up-updated_2
       rect:
         serializedVersion: 2
         x: 32
@@ -275,35 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24e29be9b26285540800000000000000
-      internalID: 4996785755355950658
+      spriteID: 13a0a3728e191df30800000000000000
+      internalID: 4598617120798542385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_heal_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c887dedac415d330800000000000000
-      internalID: 3734914327528310977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_8
+      name: Spritesheet_attack up-updated_3
       rect:
         serializedVersion: 2
         x: 0
@@ -317,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130385d3820c3ae40800000000000000
-      internalID: 5666584035222630449
+      spriteID: 0431698aaec67feb0800000000000000
+      internalID: -4686157132149157056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_heal_9
+      name: Spritesheet_attack up-updated_4
       rect:
         serializedVersion: 2
         x: 16
@@ -338,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0dd6f7bf38dfe3d0800000000000000
-      internalID: -3175081444091962098
+      spriteID: 4025aeae5bfd869e0800000000000000
+      internalID: -1627805292871134716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_heal_10
+      name: Spritesheet_attack up-updated_5
       rect:
         serializedVersion: 2
         x: 32
@@ -359,29 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 420f364ca87da6330800000000000000
-      internalID: 3705010634465996836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_heal_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f73f1c0b164bd83d0800000000000000
-      internalID: -3202705428320226433
+      spriteID: cfce5047b5c379120800000000000000
+      internalID: 2420469688221166844
       vertices: []
       indices: 
       edges: []
@@ -389,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3796ac3f96085aa4c8e5c234fb2bc918
+    spriteID: bbcf7601de6330840bd8c98687646041
     internalID: 0
     vertices: []
     indices: 
