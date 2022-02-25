@@ -227,8 +227,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 39
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &143945291
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,10 +351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9998a7e172ec6884188da5d4486dcda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectedTiles: []
+  SelectedTileActions: []
   ActionPoints: 4
-  AttackRange: 0
-  Objects: []
-  Units: []
+  AttackRange: 1
+  _objects: []
+  _units: []
 --- !u!1 &367549946
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,8 +497,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 100
   AGI: 0
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &448956214
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511427746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 367549947}
@@ -632,8 +666,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 1
   AGI: 0
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &556009946
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,8 +790,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 33
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &571184374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,8 +1125,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 12
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &1306835403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306835403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 3, z: 0}
+  m_LocalPosition: {x: -4, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 367549947}
@@ -1167,8 +1249,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 23
   AGI: 0
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &1703352009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1373,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 20
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &1705258113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,8 +1497,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 43
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
 --- !u!1 &1802873706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,5 +1621,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
   HP: 0
   AGI: 37
+  STR: 0
+  INT: 0
+  DEF: 0
+  CON: 0
+  Max_AP: 0
+  AP: 0
+  HP_B: 0
+  AGI_B: 0
+  STR_B: 0
+  INT_B: 0
+  DEF_B: 0
+  CON_B: 0
