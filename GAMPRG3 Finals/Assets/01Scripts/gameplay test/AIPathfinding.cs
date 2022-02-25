@@ -18,15 +18,9 @@ public class AIPathfinding : MonoBehaviour
     //[HideInInspector]
     public List<GameObject> _units;
     float _distanceFromTarget;
-    LayerMask mask;
     float _angle;
     float X;
     float Y;
-
-    void Start()
-    {
-        mask = LayerMask.GetMask("Friendly Units");
-    }
 
     private void Update()
     {   
@@ -156,10 +150,11 @@ public class AIPathfinding : MonoBehaviour
 
     void GetTargetsAndVariables()
     {
-        _objects = Physics2D.OverlapCircleAll(transform.position, ActionPoints + AttackRange, mask);
+        _objects = Physics2D.OverlapCircleAll(transform.position, ActionPoints + AttackRange);
 
         foreach (Collider2D Object in _objects)
         {
+            if (Object.gameObject.CompareTag("FriendlyUnit"))
             _units.Add(Object.gameObject);
         }
 
