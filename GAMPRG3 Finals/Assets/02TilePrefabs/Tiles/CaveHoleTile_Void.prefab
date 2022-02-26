@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6202940165778513753}
   - component: {fileID: 6719408651710542955}
   - component: {fileID: 2137076144008656009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CaveHoleTile_Void
   m_TagString: Untagged
   m_Icon: {fileID: 0}

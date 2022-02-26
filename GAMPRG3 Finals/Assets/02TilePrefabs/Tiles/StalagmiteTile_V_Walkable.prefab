@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3172309290290971285}
   - component: {fileID: -1303170453097112401}
   - component: {fileID: 855433565734674609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StalagmiteTile_V_Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

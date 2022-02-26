@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 966590131341355739}
   - component: {fileID: -6064891995982732750}
   - component: {fileID: 4175317247017840889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LargeStalagmiteTile_Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

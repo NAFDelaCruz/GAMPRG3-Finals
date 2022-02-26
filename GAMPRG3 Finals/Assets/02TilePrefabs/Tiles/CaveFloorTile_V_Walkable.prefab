@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1270228873759067763}
   - component: {fileID: 3635797807953648467}
   - component: {fileID: -7182574362701186473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CaveFloorTile_V_Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
