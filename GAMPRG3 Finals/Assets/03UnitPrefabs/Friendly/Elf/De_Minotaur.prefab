@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 9033345019551092668}
   - component: {fileID: 9033345019551092669}
   - component: {fileID: 9033345019551092642}
+  - component: {fileID: -5687112192025969902}
   m_Layer: 0
-  m_Name: Spear_Man
+  m_Name: De_Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,3 +103,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5687112192025969902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033345019551092643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  EXP: 0
+  MaxEXP: 10
+  RewardEXP: 0
+  HP: 7
+  AGI: 1
+  STR: 3
+  INT: 2
+  DEF: 5
+  CON: 3
+  Max_AP: 2
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.9
+  AGI_B: 0.4
+  STR_B: 0.6
+  INT_B: 0.3
+  DEF_B: 0.5
+  CON_B: 0.2

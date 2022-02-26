@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6536166727673440452}
   - component: {fileID: 3602306903397291367}
   - component: {fileID: 513489286728870433}
+  - component: {fileID: -2385571740709497504}
+  - component: {fileID: 5041886549004438504}
   m_Layer: 0
   m_Name: Fire_Elemental
   m_TagString: Untagged
@@ -102,3 +104,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2385571740709497504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270996842204885664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 3
+  AGI: 3
+  STR: 5
+  INT: 1
+  DEF: 2
+  CON: 2
+  Max_AP: 3
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.2
+  AGI_B: 0.3
+  STR_B: 0.5
+  INT_B: 0.2
+  DEF_B: 0.2
+  CON_B: 0.2
+--- !u!114 &5041886549004438504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270996842204885664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0

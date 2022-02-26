@@ -182,6 +182,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0
 --- !u!1 &763612158
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,3 +375,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1829554208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829554210}
+  - component: {fileID: 1829554209}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1829554209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829554208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03c8971c5b1d3d41843a342e1f09c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stage: 0
+--- !u!4 &1829554210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829554208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.980328, y: 62.06956, z: -3.335548}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

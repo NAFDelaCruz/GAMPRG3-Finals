@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5576698955199822367}
   - component: {fileID: 5576698955199822360}
   - component: {fileID: 5576698955199822361}
+  - component: {fileID: 2094460959351975205}
   m_Layer: 0
   m_Name: Dwarf
   m_TagString: Untagged
@@ -102,3 +103,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2094460959351975205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576698955199822362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  EXP: 0
+  MaxEXP: 8
+  RewardEXP: 0
+  HP: 6
+  AGI: 3
+  STR: 5
+  INT: 0
+  DEF: 3
+  CON: 3
+  Max_AP: 2
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.8
+  AGI_B: 0.2
+  STR_B: 0.7
+  INT_B: 0.3
+  DEF_B: 0.6
+  CON_B: 0.4

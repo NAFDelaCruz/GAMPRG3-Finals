@@ -22,14 +22,15 @@ public class SpawnLevelScript : MonoBehaviour
         levellingScript = this.gameObject.GetComponent<LevellingScript>();
         difficultyManager = this.gameObject.GetComponent<DifficultyManager>();
 
-        entityStats.Level = 0;
+        SetNewLevel();
     }
 
     private void Update()
     {
-        if (currentLevel <= setLevel)
+        if (currentLevel != setLevel)
         {
-            //Call Level Up Function in levelling script
+            levellingScript.LevelUp();
+            currentLevel++;
         }
         else
         {

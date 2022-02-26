@@ -48,6 +48,7 @@ public class LevellingScript : MonoBehaviour
     public void LevelUp()
     {
         entityStats.EXP = entityStats.EXP - entityStats.MaxEXP;
+        entityStats.MaxEXP = Mathf.FloorToInt(((entityStats.MaxEXP * 1.5f) - (entityStats.MaxEXP * 0.2f)));
         entityStats.Level++;
 
         entityStats.HP += StatHP(entityStats.HP_B);
@@ -56,6 +57,16 @@ public class LevellingScript : MonoBehaviour
         entityStats.INT += StatAGI(entityStats.INT_B);
         entityStats.DEF += StatAGI(entityStats.DEF_B);
         entityStats.CON += StatAGI(entityStats.CON_B);
+
+        if (entityStats.Max_AP <= 8) //Increases Max AP every 2 levels Up to a maximum of 8
+        {
+            entityStats.AP_LevelUp ++;
+            if (entityStats.AP_LevelUp == 2)
+            {
+                entityStats.AP_LevelUp = 0;
+                entityStats.Max_AP++;
+            }
+        }
     }
     
     public float GenerateNumber()

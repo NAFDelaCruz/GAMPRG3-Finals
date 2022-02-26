@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7715414901999363391}
   - component: {fileID: 1359081277153742992}
   - component: {fileID: -290740875722088961}
+  - component: {fileID: -6098723751583133910}
+  - component: {fileID: -6445403533957501693}
   m_Layer: 0
   m_Name: Abaddon
   m_TagString: Untagged
@@ -102,3 +104,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6098723751583133910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863403950934246137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 15
+  AGI: 2
+  STR: 8
+  INT: 3
+  DEF: 5
+  CON: 4
+  Max_AP: 2
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.7
+  AGI_B: 0.1
+  STR_B: 0.7
+  INT_B: 0.5
+  DEF_B: 0.4
+  CON_B: 0.3
+--- !u!114 &-6445403533957501693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863403950934246137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0

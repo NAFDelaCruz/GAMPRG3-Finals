@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4101452542216594190}
   - component: {fileID: 7276676686062055967}
   - component: {fileID: -768543773190036153}
+  - component: {fileID: -685042678409780335}
   m_Layer: 0
   m_Name: Cavalier
   m_TagString: FriendlyUnit
@@ -129,3 +130,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-685042678409780335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347820926617255558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 5
+  AGI: 5
+  STR: 5
+  INT: 0
+  DEF: 2
+  CON: 2
+  Max_AP: 4
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.7
+  AGI_B: 0.6
+  STR_B: 0.8
+  INT_B: 0.1
+  DEF_B: 0.4
+  CON_B: 0.1

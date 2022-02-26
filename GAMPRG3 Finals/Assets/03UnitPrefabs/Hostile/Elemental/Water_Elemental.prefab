@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6129504081687566655}
   - component: {fileID: 875703718128069303}
   - component: {fileID: 53889831993427725}
+  - component: {fileID: -8520055354626017802}
+  - component: {fileID: -3174935555148095399}
   m_Layer: 0
   m_Name: Water_Elemental
   m_TagString: Untagged
@@ -102,3 +104,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8520055354626017802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712522813929892636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 8
+  AGI: 4
+  STR: 2
+  INT: 2
+  DEF: 3
+  CON: 3
+  Max_AP: 3
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.7
+  AGI_B: 0.3
+  STR_B: 0.3
+  INT_B: 0.3
+  DEF_B: 0.2
+  CON_B: 0.2
+--- !u!114 &-3174935555148095399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712522813929892636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0

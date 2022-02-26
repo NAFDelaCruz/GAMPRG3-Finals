@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7448196950569759647}
   - component: {fileID: 3784871205617649702}
   - component: {fileID: -2936302468911885331}
+  - component: {fileID: -1559078281014610035}
   m_Layer: 0
   m_Name: Knight
   m_TagString: FriendlyUnit
@@ -129,3 +130,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-1559078281014610035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903513203843796560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 6
+  AGI: 3
+  STR: 4
+  INT: 1
+  DEF: 4
+  CON: 0
+  Max_AP: 2
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.9
+  AGI_B: 0.4
+  STR_B: 0.6
+  INT_B: 0.4
+  DEF_B: 0.6
+  CON_B: 0.2

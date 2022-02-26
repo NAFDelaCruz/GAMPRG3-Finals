@@ -22,6 +22,8 @@ public class EntityStats : MonoBehaviour
     [Header("Action Points")]
     public int Max_AP;
     public int AP;
+    [HideInInspector]
+    public int AP_LevelUp; //Starts at 0, used to detect if AP should be increased
 
     [Header("Stat Bias")]
     public float HP_B;
@@ -30,4 +32,25 @@ public class EntityStats : MonoBehaviour
     public float INT_B;
     public float DEF_B;
     public float CON_B;
+
+    private void Start()
+    {
+        InvertBias();
+        SetRewardEXP();
+    }
+
+    public void SetRewardEXP()
+    {
+        RewardEXP = Mathf.FloorToInt(1.5f * Level);
+    }
+
+    public void InvertBias() //Converts Bias Values to the inverse for RNG test. ex. 0.8 bias gets converted to 0.2 for RNG test
+    {
+        HP_B = -HP_B + 1;
+        AGI_B = -AGI_B + 1;
+        STR_B = -STR_B + 1;
+        INT_B = -INT_B + 1;
+        DEF_B = -DEF_B + 1;
+        CON_B = -CON_B + 1;
+    }
 }

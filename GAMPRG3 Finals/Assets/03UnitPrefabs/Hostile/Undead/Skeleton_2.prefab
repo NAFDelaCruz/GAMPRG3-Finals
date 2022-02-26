@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5252110391868747131
+--- !u!1 &2749861925202433847
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8846451926444352075}
-  - component: {fileID: 5120471519071452824}
-  - component: {fileID: 5013079235562446978}
+  - component: {fileID: 7649912905791287742}
+  - component: {fileID: 3269594395853712884}
+  - component: {fileID: 712044557534769155}
+  - component: {fileID: 1657983623648138416}
+  - component: {fileID: 1856045755161003574}
   m_Layer: 0
   m_Name: Skeleton_2
   m_TagString: Untagged
@@ -18,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8846451926444352075
+--- !u!4 &7649912905791287742
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5252110391868747131}
+  m_GameObject: {fileID: 2749861925202433847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5120471519071452824
+--- !u!212 &3269594395853712884
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5252110391868747131}
+  m_GameObject: {fileID: 2749861925202433847}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 245490547
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8396618567045268262, guid: a6fa3ecafa36c0044966459155e0c101,
+  m_Sprite: {fileID: -7039910809895762823, guid: 46717a78ca6a5d84cbbca5a257755f4b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,17 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5013079235562446978
+--- !u!95 &712044557534769155
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5252110391868747131}
+  m_GameObject: {fileID: 2749861925202433847}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 630740baf20b2f540bd73922fd3c5786, type: 2}
+  m_Controller: {fileID: 22100000, guid: 34bd29a7d87a5b1459df062b79a90aea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,3 +104,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1657983623648138416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749861925202433847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 5
+  AGI: 2
+  STR: 3
+  INT: 0
+  DEF: 4
+  CON: 1
+  Max_AP: 2
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.4
+  AGI_B: 0.2
+  STR_B: 0.4
+  INT_B: 0.2
+  DEF_B: 0.3
+  CON_B: 0.2
+--- !u!114 &1856045755161003574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749861925202433847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2817305808365899251}
   - component: {fileID: 5302088574859652175}
   - component: {fileID: 8609113693679798403}
+  - component: {fileID: -1085029129227058620}
+  - component: {fileID: -9105746021115134726}
   m_Layer: 0
   m_Name: Wind_Elemental
   m_TagString: Untagged
@@ -101,3 +103,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1085029129227058620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367429009709432733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496385f242e5de4b983ab5d9923c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  EXP: 0
+  MaxEXP: 0
+  RewardEXP: 0
+  HP: 3
+  AGI: 8
+  STR: 3
+  INT: 2
+  DEF: 1
+  CON: 1
+  Max_AP: 5
+  AP: 0
+  AP_LevelUp: 0
+  HP_B: 0.4
+  AGI_B: 0.2
+  STR_B: 0.2
+  INT_B: 0.4
+  DEF_B: 0.2
+  CON_B: 0.1
+--- !u!114 &-9105746021115134726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367429009709432733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 0}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0
