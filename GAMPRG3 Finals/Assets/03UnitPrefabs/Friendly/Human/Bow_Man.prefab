@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3360015360012397230}
   - component: {fileID: -7382586714778184261}
   - component: {fileID: 3101181792869791715}
-  - component: {fileID: -6241239225331933252}
   - component: {fileID: -5807813409223450816}
+  - component: {fileID: 5078798890254396799}
   m_Layer: 0
   m_Name: Bow_Man
   m_TagString: FriendlyUnit
@@ -135,32 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entities: {fileID: 0}
   EntityList: []
---- !u!61 &-6241239225331933252
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876529308232886162}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &-5807813409223450816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +166,16 @@ MonoBehaviour:
   INT_B: 0.4
   DEF_B: 0.4
   CON_B: 0.1
+--- !u!65 &5078798890254396799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876529308232886162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

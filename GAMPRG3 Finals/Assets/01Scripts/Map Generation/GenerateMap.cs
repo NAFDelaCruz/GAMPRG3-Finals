@@ -234,40 +234,4 @@ public class GenerateMap : MonoBehaviour
         }
 
     }
-
-    /*
-    void LocateValidTile(int selector)
-    {
-        int rand_x = Random.Range(0, MapWidth - 1);
-        int rand_y = Random.Range(0, MapHeight - 1);
-        tileName = rand_x.ToString() + rand_y.ToString();
-
-        GameObject targetTile = GameObject.Find(tileName).gameObject;
-        if (targetTile.GetComponent<Tiles>().IsObstacle == true)
-        {
-            Debug.Log("Target tile is invalid selecting a new tile");
-            LocateValidTile(selector);
-        }
-
-        GetTileObject(tileName, selector);
-    }
-
-    void GetTileObject(string tileName, int selector)
-    {
-        Debug.Log(tileName);
-        GameObject targetTile = GameObject.Find(tileName).gameObject;
-        if (selector == 0)
-        {
-            Debug.Log("Start Point");
-            StartPoint = targetTile;
-            targetTile.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        if (selector == 1)
-        {
-            Debug.Log("End Point");
-            EndPoint = targetTile;
-            targetTile.GetComponent<SpriteRenderer>().color = Color.cyan;
-        }
-    }
-    */
 }

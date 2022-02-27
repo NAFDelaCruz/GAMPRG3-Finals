@@ -121,6 +121,7 @@ MonoBehaviour:
   SelectedTileActions: []
   ActionPoints: 6
   AttackRange: 1
+  Target: FriendlyUnit
   _objects: []
   _units: []
 --- !u!114 &-1131906380419530360

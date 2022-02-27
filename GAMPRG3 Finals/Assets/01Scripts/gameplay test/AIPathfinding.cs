@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AIPathfinding : MonoBehaviour
 {
@@ -15,17 +16,19 @@ public class AIPathfinding : MonoBehaviour
 
     [Header("Target Variables")]
     [HideInInspector]
-    public Collider2D[] _objects;
+    public Collider[] _objects;
     //[HideInInspector]
     public List<GameObject> _units;
     float _distanceFromTarget;
-    float _angle;
+    int _currentTarget = 0;
+    public Collider2D[] AvailableTiles;
 
     private void Update()
     {   
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
-            GetTargetsAndVariables();
+            _currentTarget = 0;
+            GetTargets();
             GetPath();
         }
     }
@@ -35,11 +38,12 @@ public class AIPathfinding : MonoBehaviour
         for (int Count = 0; Count < ActionPoints; Count++)
         {
             if (_units.Count != 0)
-                _distanceFromTarget = Vector2.Distance(GetLastMoveTile().transform.position, _units[0].transform.position);
+                _distanceFromTarget = Vector2.Distance(GetLastMoveTile().transform.position, _units[_currentTarget].transform.position);
 
             if (_distanceFromTarget < AttackRange + 0.5f)
             {
-                SelectedTiles.Add(_units[0].transform.parent.gameObject);
+                SelectedTiles.Add(_units[_currentTarget].transform.parent.gameObject);
+                _currentTarget++;
                 SelectedTileActions.Add("Attack");
             }
             else if (_distanceFromTarget > AttackRange + 0.5f)
@@ -52,24 +56,27 @@ public class AIPathfinding : MonoBehaviour
 
     GameObject GetTiles()
     {
-        GameObject Tile = new GameObject();
+        GameObject Tile = null;
+
         Transform LastTile = GetLastMoveTile();
-        float X = GetXDirection(LastTile.position.x, _units[0].transform.parent.position.x);
-        float Y = GetYDirection(LastTile.position.y, _units[0].transform.parent.position.y);
+        float X = GetXDirection(LastTile.position.x, _units[_currentTarget].transform.parent.position.x);
+        float Y = GetYDirection(LastTile.position.y, _units[_currentTarget].transform.parent.position.y);
+        Vector2 dir = _units[_currentTarget].transform.position - transform.position;
+        float _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(LastTile.position.x + X, LastTile.position.y + Y), Vector2.zero);
 
         if (!hit.collider.gameObject.GetComponent<Tiles>().IsObstacle && hit.collider.gameObject.transform.childCount == 0)
             Tile = hit.collider.gameObject;
         else if (hit.collider.gameObject.GetComponent<Tiles>().IsObstacle || hit.collider.gameObject.transform.childCount > 0)
         {
-            if (_angle >= 0 && _angle <= 90 && Y == 1)
-                Tile = GetValidTiles(gameObject.transform.position, new Vector2(LastTile.position.x + 1, LastTile.position.y + 1));
-            else if (_angle >= 90 && _angle <= 180 && Y == 1)
-                Tile = GetValidTiles(gameObject.transform.position, new Vector2(LastTile.position.x - 1, LastTile.position.y + 1));
-            else if (_angle <= 0 && _angle >= -90 && Y == -1)
-                Tile = GetValidTiles(gameObject.transform.position, new Vector2(LastTile.position.x + 1, LastTile.position.y - 1));
-            else if (_angle <= -90 && _angle >= -180 && Y == -1)
-                Tile = GetValidTiles(gameObject.transform.position, new Vector2(LastTile.position.x - 1, LastTile.position.y - 1));
+            if (_angle < 44.5f && _angle > -44.5f)
+                Tile = GetValidTiles(new Vector2(LastTile.position.x, LastTile.position.y + 1f), new Vector2(LastTile.position.x + 1f, LastTile.position.y - 1f));
+            else if (_angle > 44.5f && _angle < 134.5f)
+                Tile = GetValidTiles(new Vector2(LastTile.position.x - 1f, LastTile.position.y), new Vector2(LastTile.position.x + 1f, LastTile.position.y + 1f));
+            else if (_angle > 134.5f && _angle < -134.5f)
+                Tile = GetValidTiles(new Vector2(LastTile.position.x, LastTile.position.y + 1f), new Vector2(LastTile.position.x - 1f, LastTile.position.y - 1f));
+            else if (_angle < -44.5f && _angle > -134.5f)
+                Tile = GetValidTiles(new Vector2(LastTile.position.x - 1f, LastTile.position.y), new Vector2(LastTile.position.x + 1f, LastTile.position.y - 1f));
         }
 
         return Tile;
@@ -77,13 +84,20 @@ public class AIPathfinding : MonoBehaviour
 
     GameObject GetValidTiles(Vector2 EnemyTilePos, Vector2 EndArea)
     {
-        GameObject NewTile = new GameObject();
-
-        Collider2D[] AvailableTiles = Physics2D.OverlapAreaAll(EnemyTilePos, EndArea);
+        Physics2D.SyncTransforms();
+        GameObject NewTile = null;
+        if (AvailableTiles.Length != 0)
+            Array.Clear(AvailableTiles, 0, AvailableTiles.Length);
+        AvailableTiles = Physics2D.OverlapAreaAll(EnemyTilePos, EndArea);
 
         foreach (Collider2D PossibleTile in AvailableTiles)
         {
-            if (PossibleTile.gameObject.GetComponent<Tiles>().IsObstacle && PossibleTile.gameObject.transform.childCount == 0)
+            Debug.Log(PossibleTile);
+        }
+
+        foreach (Collider2D PossibleTile in AvailableTiles)
+        {
+            if (!PossibleTile.gameObject.GetComponent<Tiles>().IsObstacle && PossibleTile.gameObject.transform.childCount == 0)
             {
                 NewTile = PossibleTile.gameObject;
                 break;
@@ -113,6 +127,23 @@ public class AIPathfinding : MonoBehaviour
 
         return TileTransform;
     }
+    void GetTargets()
+    {
+        _objects = Physics.OverlapSphere(transform.position, ActionPoints + (AttackRange - 1));
+
+        foreach (Collider Object in _objects)
+        {
+            if (Object.gameObject.CompareTag(Target))
+            _units.Add(Object.gameObject);
+        }
+
+        _units.Sort(SortByHP);
+    }
+
+    static int SortByHP(GameObject x, GameObject y)
+    {
+        return x.GetComponent<EntityStats>().HP.CompareTo(y.GetComponent<EntityStats>().HP);
+    }
 
     float GetXDirection(float LocalXCoord, float TargetXCoord)
     {
@@ -134,24 +165,4 @@ public class AIPathfinding : MonoBehaviour
             return -1;
     }
 
-    void GetTargetsAndVariables()
-    {
-        _objects = Physics2D.OverlapCircleAll(transform.position, ActionPoints + (AttackRange - 1));
-
-        foreach (Collider2D Object in _objects)
-        {
-            if (Object.gameObject.CompareTag("FriendlyUnit"))
-            _units.Add(Object.gameObject);
-        }
-
-        _units.Sort(SortByHP);
-
-        Vector2 dir = _units[0].transform.position - transform.position;
-        _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-    }
-
-    static int SortByHP(GameObject x, GameObject y)
-    {
-        return x.GetComponent<EntityStats>().HP.CompareTo(y.GetComponent<EntityStats>().HP);
-    }
 }
