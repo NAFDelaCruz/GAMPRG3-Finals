@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1005514845212582162}
   - component: {fileID: -1131906380419530360}
   - component: {fileID: -3990124726767029614}
+  - component: {fileID: -7034806063063323382}
   m_Layer: 0
   m_Name: Spider_1
   m_TagString: Untagged
@@ -124,6 +125,7 @@ MonoBehaviour:
   Target: FriendlyUnit
   _objects: []
   _units: []
+  AvailableTiles: []
 --- !u!114 &-1131906380419530360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,7 @@ MonoBehaviour:
   MaxEXP: 0
   RewardEXP: 0
   HP: 3
+  Curr_HP: 0
   AGI: 4
   STR: 2
   INT: 2
@@ -186,3 +189,16 @@ MonoBehaviour:
   CONStartChance: 0
   CONBaseChance: 0
   CONChanceMultiplier: 0
+--- !u!65 &-7034806063063323382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853175665282989455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

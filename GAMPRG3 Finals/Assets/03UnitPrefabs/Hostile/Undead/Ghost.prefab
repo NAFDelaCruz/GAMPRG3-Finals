@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2623448856034703034}
   - component: {fileID: -4697156635241868515}
   - component: {fileID: 3125484885321578041}
+  - component: {fileID: 914201069492400864}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -121,6 +122,7 @@ MonoBehaviour:
   MaxEXP: 0
   RewardEXP: 0
   HP: 8
+  Curr_HP: 0
   AGI: 2
   STR: 0
   INT: 5
@@ -166,3 +168,16 @@ MonoBehaviour:
   CONStartChance: 0
   CONBaseChance: 0
   CONChanceMultiplier: 0
+--- !u!65 &914201069492400864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076148141863443279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

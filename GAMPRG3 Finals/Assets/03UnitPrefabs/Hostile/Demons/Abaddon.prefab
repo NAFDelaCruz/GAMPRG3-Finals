@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -290740875722088961}
   - component: {fileID: -6098723751583133910}
   - component: {fileID: -6445403533957501693}
+  - component: {fileID: 7805180257636594741}
   m_Layer: 0
   m_Name: Abaddon
   m_TagString: Untagged
@@ -121,6 +122,7 @@ MonoBehaviour:
   MaxEXP: 0
   RewardEXP: 0
   HP: 15
+  Curr_HP: 0
   AGI: 2
   STR: 8
   INT: 3
@@ -166,3 +168,16 @@ MonoBehaviour:
   CONStartChance: 0
   CONBaseChance: 0
   CONChanceMultiplier: 0
+--- !u!65 &7805180257636594741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863403950934246137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

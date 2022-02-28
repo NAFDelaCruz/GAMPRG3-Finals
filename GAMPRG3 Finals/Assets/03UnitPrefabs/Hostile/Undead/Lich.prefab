@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 467426362041565107}
   - component: {fileID: -7960611763839914795}
   - component: {fileID: -4410660183316084058}
+  - component: {fileID: 877501992550254305}
   m_Layer: 0
   m_Name: Lich
   m_TagString: Untagged
@@ -121,6 +122,7 @@ MonoBehaviour:
   MaxEXP: 0
   RewardEXP: 0
   HP: 6
+  Curr_HP: 0
   AGI: 1
   STR: 0
   INT: 8
@@ -166,3 +168,16 @@ MonoBehaviour:
   CONStartChance: 0
   CONBaseChance: 0
   CONChanceMultiplier: 0
+--- !u!65 &877501992550254305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794920162805466532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

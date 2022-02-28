@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7005683390030274428}
   - component: {fileID: 5281355524627914544}
   - component: {fileID: -499668682211384060}
+  - component: {fileID: -6134266508025729824}
   m_Layer: 0
   m_Name: Paladin
   m_TagString: FriendlyUnit
@@ -121,6 +122,7 @@ MonoBehaviour:
   MaxEXP: 0
   RewardEXP: 0
   HP: 6
+  Curr_HP: 0
   AGI: 3
   STR: 3
   INT: 3
@@ -136,6 +138,19 @@ MonoBehaviour:
   DEF_B: 0.6
   CON_B: 0.5
 --- !u!65 &-499668682211384060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268109712708635802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &-6134266508025729824
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
