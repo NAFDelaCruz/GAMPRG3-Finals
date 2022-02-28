@@ -20,26 +20,32 @@ public class SpawnLevelScript : MonoBehaviour
     {
         entityStats = this.gameObject.GetComponent<EntityStats>();
         levellingScript = this.gameObject.GetComponent<LevellingScript>();
-        difficultyManager = this.gameObject.GetComponent<DifficultyManager>();
 
         SetNewLevel();
     }
 
     private void Update()
     {
-        if (currentLevel != setLevel)
+        if (currentLevel <= setLevel)
         {
             levellingScript.LevelUp();
             currentLevel++;
         }
         else
         {
+            entityStats.Curr_HP = entityStats.HP;
+            SetRewardEXP();
             Destroy(this); //Destroy this script
         }
     }
 
     private void SetNewLevel()
     {
-        setLevel = Mathf.FloorToInt(Random.Range(difficultyManager.Stage,3+difficultyManager.Stage));
+        setLevel = Mathf.FloorToInt(Random.Range(difficultyManager.Stage-3,difficultyManager.Stage+4));
+    }
+
+    public void SetRewardEXP()
+    {
+        entityStats.RewardEXP = Mathf.FloorToInt(1.5f * entityStats.Level);
     }
 }

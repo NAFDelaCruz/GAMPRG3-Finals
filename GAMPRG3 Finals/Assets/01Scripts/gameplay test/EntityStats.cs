@@ -11,6 +11,7 @@ public class EntityStats : MonoBehaviour
     public int RewardEXP;
     [Header("Base Stats")]
     public int HP;
+    public int Curr_HP;
     public int AGI; //Action Priority
 
     public int STR; //Physical Damage
@@ -35,13 +36,8 @@ public class EntityStats : MonoBehaviour
 
     private void Start()
     {
+        Curr_HP = HP;
         InvertBias();
-        SetRewardEXP();
-    }
-
-    public void SetRewardEXP()
-    {
-        RewardEXP = Mathf.FloorToInt(1.5f * Level);
     }
 
     public void InvertBias() //Converts Bias Values to the inverse for RNG test. ex. 0.8 bias gets converted to 0.2 for RNG test

@@ -71,30 +71,33 @@ public class LevellingScript : MonoBehaviour
     
     public float GenerateNumber()
     {
-        float rng = Random.Range(1, 0);
+        float rng = Random.Range(1.0f, 0.0f);
         return rng;
     }
 
     public int IncreaseStat(float startChance, float baseChance, float chanceMultiplier)
     {
-        float currentChance = startChance;
         int statIncrease = 0;
 
-        while (true)
-        {
             float rng = GenerateNumber();
-            if (rng >= currentChance)
+            Debug.Log(rng);
+            switch (rng)
             {
-                statIncrease++;
-                currentChance = currentChance * chanceMultiplier;
-
-                if (currentChance == 0)
-                    currentChance = baseChance;
+                case var expression when (rng > 0 && rng < 0.4f):
+                    statIncrease = 1;
+                    break;
+                case var expression when (rng >= 0.4f && rng < 0.6f):
+                    statIncrease = 2;
+                    break;
+                case var expression when (rng >= 0.6f && rng < 0.9f):
+                    statIncrease = 3;
+                    break;
+                case var expression when (rng >= .9f):
+                    statIncrease = 4;
+                    break;
+                default:
+                    break;
             }
-            else
-                break;
-        }
-
         return statIncrease;
     }
 
