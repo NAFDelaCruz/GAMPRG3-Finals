@@ -11,38 +11,40 @@ public class EntityPriority
 
 public class TurnManager : MonoBehaviour
 {
-    public GameObject Entities;
+    public GameObject Map;
     public List<EntityPriority> EntityList;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Update()
     {
-        ObtainEntities();
+        if (EntityList.Count == 0)
+            ObtainEntities();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("Sorting");
-            SortPriority();
-        }
-    }
     void ObtainEntities()
     {
-        for (int i = 0; i < Entities.transform.childCount; i++)
-
+        for (int i = 0; i < Map.transform.childCount; i++)
         {
-            EntityList.Add(new EntityPriority() { Entity = Entities.transform.GetChild(i).gameObject, Entity_AGI = Entities.transform.GetChild(i).GetComponent<EntityStats>().AGI });
+            GameObject currentTile = Map.transform.GetChild(i).gameObject;
+
+            if (currentTile.transform.childCount > 0) 
+                EntityList.Add(new EntityPriority() { Entity = currentTile.transform.GetChild(0).gameObject, Entity_AGI = currentTile.transform.GetChild(0).GetComponent<EntityStats>().AGI });
         }
+
+        SortPriority();
     }
 
     void SortPriority()
     {
         EntityList.Sort(SortByAGI);
     }
+
     static int SortByAGI(EntityPriority x, EntityPriority y)
     {
         return x.Entity_AGI.CompareTo(y.Entity_AGI);
+    }
+
+    void StartTurn()
+    {
+
     }
 }

@@ -10,9 +10,12 @@ public class UnitActionController : MonoBehaviour
     public int ActionPoints;
 
     [Header("Collections")]
-    Collider2D[] CollidedTiles;
-    List<GameObject> AvailableTiles;
-    List<GameObject> ValidTiles;
+    [HideInInspector]
+    public Collider2D[] CollidedTiles;
+    [HideInInspector]
+    public List<GameObject> AvailableTiles;
+    [HideInInspector]
+    public List<GameObject> ValidTiles;
     public List<GameObject> SelectedTiles;
     public List<string> SelectedTileActions;
 
@@ -26,7 +29,7 @@ public class UnitActionController : MonoBehaviour
     int CurrentActionPoints;
     string TileAction;
 
-    private void Start()
+    void Start()
     {
         ResetTurn();
     }
@@ -68,40 +71,31 @@ public class UnitActionController : MonoBehaviour
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().color = SelectedAttackColor;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            TileAction = "Move";
-            UnmarkTiles(ValidTiles);
-            ValidTiles.Clear();
-            Transform CenterTile = GetLastMoveTile();
-            GetTiles(CenterTile, CurrentActionPoints*2, AvailableTiles);
-            MarkTiles(MoveColor, AvailableTiles);
-
-            GetMoveTiles();
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TileAction = "Attack";
-            UnmarkTiles(AvailableTiles);
-            ValidTiles.Clear();
-            AvailableTiles.Clear();
-            GetAttackTiles();
-        }
     }
 
     public void GetMoveTiles()
     {
+        TileAction = "Move";
+        UnmarkTiles(ValidTiles);
+        ValidTiles.Clear();
+        Transform CenterTile = GetLastMoveTile();
+        GetTiles(CenterTile, CurrentActionPoints * 2, AvailableTiles);
+        MarkTiles(MoveColor, AvailableTiles);
+
         if (CurrentActionPoints > 0)
         {
-            Transform CenterTile = GetLastMoveTile();
+            CenterTile = GetLastMoveTile();
             GetTiles(CenterTile, 1, ValidTiles);
         }
     }
 
     public void GetAttackTiles()
     {
+        TileAction = "Attack";
+        UnmarkTiles(AvailableTiles);
+        ValidTiles.Clear();
+        AvailableTiles.Clear();
+
         if (CurrentActionPoints > 0)
         {
             Transform CenterTile = GetLastMoveTile();

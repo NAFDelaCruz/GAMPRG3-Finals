@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3784871205617649702}
   - component: {fileID: -1559078281014610035}
   - component: {fileID: 7696304131221905054}
-  - component: {fileID: 8628426456214721577}
   m_Layer: 0
   m_Name: Knight
   m_TagString: FriendlyUnit
@@ -138,19 +137,6 @@ MonoBehaviour:
   DEF_B: 0.6
   CON_B: 0.2
 --- !u!65 &7696304131221905054
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903513203843796560}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &8628426456214721577
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

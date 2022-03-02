@@ -101,8 +101,8 @@ public class GenerateMap : MonoBehaviour
             }
         }
 
+        Physics2D.SyncTransforms();
         LocateStart();   
-        LocateEnd();   
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -191,7 +191,6 @@ public class GenerateMap : MonoBehaviour
     void LocateStart()
     {
         bool IsStartInvalid = true;
-        Physics2D.SyncTransforms();
 
         while (IsStartInvalid)
         {
@@ -207,11 +206,12 @@ public class GenerateMap : MonoBehaviour
                     ValidTileCount++;
             }
 
-            if (ValidTileCount >= 4 && GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle == false)
+            if (ValidTileCount >= 4 && !GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle)
             {
                 StartPoint = GameObject.Find(StartX + "" + StartY);
                 IsStartInvalid = false;
                 StartPoint.GetComponent<SpriteRenderer>().color = Color.red;
+                LocateEnd();
             }
         }
     }
@@ -225,7 +225,7 @@ public class GenerateMap : MonoBehaviour
             int EndX = Random.Range(0, MapWidth - 1);
             int EndY = Random.Range(0, MapHeight - 1);
 
-            if (GameObject.Find(EndX + "" + EndY).GetComponent<Tiles>().IsObstacle == false)
+            if (!GameObject.Find(EndX + "" + EndY).GetComponent<Tiles>().IsObstacle && Vector2.Distance(StartPoint.transform.position, new Vector2(EndX, EndY)) > MapWidth/2)
             {
                 EndPoint = GameObject.Find(EndX + "" + EndY);
                 IsEndInvalid = false;
