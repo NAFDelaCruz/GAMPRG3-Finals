@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6060759264945101077}
-  - component: {fileID: 4101452542216594190}
   - component: {fileID: 7276676686062055967}
+  - component: {fileID: 4101452542216594190}
+  - component: {fileID: 5271586640431396270}
   - component: {fileID: -685042678409780335}
   - component: {fileID: 4618969284589685992}
   m_Layer: 0
@@ -34,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7276676686062055967
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347820926617255558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 061a4a47a274c214ab9943ac46bee5bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &4101452542216594190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,25 +105,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7276676686062055967
-Animator:
-  serializedVersion: 3
+--- !u!114 &5271586640431396270
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347820926617255558}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 061a4a47a274c214ab9943ac46bee5bc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisUnit: {fileID: 4347820926617255558}
+  SelectedTiles: []
+  SelectedTileActions: []
+  HasAP: 0
+  LastTile: {fileID: 0}
 --- !u!114 &-685042678409780335
 MonoBehaviour:
   m_ObjectHideFlags: 0

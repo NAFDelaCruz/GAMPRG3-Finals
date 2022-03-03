@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8507252639485738444}
-  - component: {fileID: 5464107942431890057}
   - component: {fileID: 3721651793846357619}
+  - component: {fileID: 5464107942431890057}
+  - component: {fileID: -7926812181193599968}
   - component: {fileID: -1005514845212582162}
   - component: {fileID: -1131906380419530360}
   - component: {fileID: -3990124726767029614}
@@ -36,6 +37,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3721651793846357619
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853175665282989455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: b8e067e5afdb0ae4a992c6cf09d3fa64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &5464107942431890057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,25 +107,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3721651793846357619
-Animator:
-  serializedVersion: 3
+--- !u!114 &-7926812181193599968
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4853175665282989455}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b8e067e5afdb0ae4a992c6cf09d3fa64, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisUnit: {fileID: 4853175665282989455}
+  SelectedTiles: []
+  SelectedTileActions: []
+  HasAP: 0
+  LastTile: {fileID: 0}
 --- !u!114 &-1005514845212582162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,14 +136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9998a7e172ec6884188da5d4486dcda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThisUnit: {fileID: 0}
   SelectedTiles: []
   SelectedTileActions: []
-  ActionPoints: 6
-  AttackRange: 1
-  Target: FriendlyUnit
+  HasAP: 0
+  LastTile: {fileID: 0}
+  TurnManagerScript: {fileID: 0}
   _objects: []
   _units: []
   AvailableTiles: []
+  AttackRange: 1
+  Target: FriendlyUnit
 --- !u!114 &-1131906380419530360
 MonoBehaviour:
   m_ObjectHideFlags: 0

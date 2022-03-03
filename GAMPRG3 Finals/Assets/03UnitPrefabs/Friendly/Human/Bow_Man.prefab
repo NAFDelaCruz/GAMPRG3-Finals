@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083857087602715868}
-  - component: {fileID: 6671003955695382263}
   - component: {fileID: 3360015360012397230}
-  - component: {fileID: -7382586714778184261}
+  - component: {fileID: 6671003955695382263}
+  - component: {fileID: -7700017233033855035}
   - component: {fileID: -5807813409223450816}
   - component: {fileID: 5078798890254396799}
   m_Layer: 0
@@ -35,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3360015360012397230
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876529308232886162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: b9db96d89308e704491e8298085f3a4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &6671003955695382263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,26 +104,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3360015360012397230
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876529308232886162}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b9db96d89308e704491e8298085f3a4f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-7382586714778184261
+--- !u!114 &-7700017233033855035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,16 +113,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1876529308232886162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b079e91c4e233a7469405a2f231ddb88, type: 3}
+  m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 3
-  ActionPoints: 6
-  CollidedTiles: []
-  AvailableTiles: []
-  ValidTiles: []
+  ThisUnit: {fileID: 1876529308232886162}
   SelectedTiles: []
   SelectedTileActions: []
+  HasAP: 0
+  LastTile: {fileID: 0}
 --- !u!114 &-5807813409223450816
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -295,6 +295,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760755504}
+  - component: {fileID: 760755506}
+  - component: {fileID: 760755507}
   - component: {fileID: 760755503}
   - component: {fileID: 760755505}
   m_Layer: 0
@@ -353,6 +355,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Map: {fileID: 712515806}
   EntityList: []
+  Actions: {fileID: 0}
+  TurnEnds:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &760755506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760755502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb40af9959a0bcf4d9ba4f55c253e5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedUnit: {fileID: 0}
+  SelectedUnitActionManager: {fileID: 0}
+  SelectedUnitStats: {fileID: 0}
+--- !u!114 &760755507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760755502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b079e91c4e233a7469405a2f231ddb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedTiles: []
+  SelectedTileActions: []
+  LastTile: {fileID: 0}
+  AttackRange: 0
+  CollidedTiles: []
+  AvailableTiles: []
+  ValidTiles: []
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,20 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 
-public class AIPathfinding : MonoBehaviour
+public class AIPathfinding : ActionManager
 {
+    [Header("Set Components")]
+    public TurnManager TurnManagerScript;
+    EntityStats _stats;
+
     [Header("Collections")]
-    public List<GameObject> SelectedTiles;
-    public List<string> SelectedTileActions;
-
-    [Header("Entity Stats")]
-    public int ActionPoints;
-    public int AttackRange;
-    public string Target;
-
-    [Header("Target Variables")]
     [HideInInspector]
     public Collider[] _objects;
     [HideInInspector]
@@ -22,13 +18,28 @@ public class AIPathfinding : MonoBehaviour
     [HideInInspector]
     public Collider2D[] AvailableTiles;
 
+    [Header("Entity Stats")]
+    public int AttackRange;
+    public string Target;
+
     [Header("Tracking Variables")]
-    Transform LastTile;
     float _distanceFromTarget;
     int _currentTarget = 0;
 
     void Start()
     {
+        TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
+        TurnManagerScript.TurnEnds.AddListener(ResetTurn);
+        _stats = gameObject.GetComponent<EntityStats>();
+        StartPathfinding();
+    }
+
+    void ResetTurn()
+    {
+        _currentTarget = 0;
+        SelectedTiles.Clear();
+        SelectedTileActions.Clear();
+        _units.Clear();
         StartPathfinding();
     }
 
@@ -42,18 +53,9 @@ public class AIPathfinding : MonoBehaviour
         }
     }
 
-    void ResetTurn()
-    {
-        _currentTarget = 0;
-        SelectedTiles.Clear();
-        SelectedTileActions.Clear();
-        _units.Clear();
-        StartPathfinding();
-    }
-
     void GetPath()
     {
-        for (int Count = 0; Count < ActionPoints; Count++)
+        for (int Count = 0; Count < _stats.Max_AP; Count++)
         {
             LastTile = GetLastMoveTile();
 
@@ -131,7 +133,7 @@ public class AIPathfinding : MonoBehaviour
 
     void GetTargets()
     {
-        _objects = Physics.OverlapSphere(transform.position, ActionPoints + (AttackRange - 1));
+        _objects = Physics.OverlapSphere(transform.position, _stats.Max_AP + (AttackRange - 1));
 
         foreach (Collider Object in _objects)
         {
@@ -146,27 +148,4 @@ public class AIPathfinding : MonoBehaviour
     {
         return x.GetComponent<EntityStats>().HP.CompareTo(y.GetComponent<EntityStats>().HP);
     }
-
-    public virtual Transform GetLastMoveTile()
-    {
-        Transform TileTransform = null;
-
-        if (!SelectedTileActions.Contains("Move"))
-            TileTransform = gameObject.transform.parent;
-        else if (SelectedTileActions.Contains("Move"))
-        {
-            for (int LastIndex = SelectedTileActions.Count - 1; LastIndex >= 0; LastIndex--)
-            {
-                if (SelectedTileActions[LastIndex] == "Move")
-                {
-                    TileTransform = SelectedTiles[LastIndex].transform;
-                    break;
-                }
-            }
-        }
-
-        return TileTransform;
-    }
-
-
 }
