@@ -7,20 +7,20 @@ public class HPBarScript : MonoBehaviour
 {
     public float fill_perc;
 
-    public UnitSelector UnitSelector;
     public EntityStats entityStats;
 
     public GameObject Fill;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        entityStats = this.GetComponentInParent<EntityStats>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         fill_perc = (float)entityStats.Curr_HP / (float)entityStats.HP;
         Fill.GetComponent<Image>().fillAmount = fill_perc;
-    }
-
-    public void UpdateSelectedTarget()
-    {
-        entityStats = UnitSelector.SelectedUnit.GetComponent<EntityStats>();
     }
 }
