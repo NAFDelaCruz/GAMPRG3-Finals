@@ -6,15 +6,18 @@ public class UnitSpawner : MonoBehaviour
 {
     [Header("Set Components")]
     public GameObject TestUnit;
-    public GameObject Map;
     public GameObject[] TestPartyUnits;
     public List<GameObject> SpawnTiles;
 
     GenerateMap generateMap;
 
-    void Start()
+    private void Start()
     {
-        generateMap = Map.GetComponent<GenerateMap>();
+        generateMap = GetComponent<GenerateMap>();
+    }
+
+    public void SpawnUnits()
+    {
         Instantiate(TestUnit, generateMap.StartPoint.gameObject.transform);
 
         foreach (Collider2D tile in generateMap.Tiles)

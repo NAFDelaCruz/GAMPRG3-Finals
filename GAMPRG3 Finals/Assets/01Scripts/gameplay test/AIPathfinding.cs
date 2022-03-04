@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using System;
 
-public class AIPathfinding : ActionManager
+public class AIPathfinding : MonoBehaviour
 {
     [Header("Set Components")]
     public TurnManager TurnManagerScript;
+    public ActionManager ActionManagerScript;
     EntityStats _stats;
 
     [Header("Collections")]
@@ -25,10 +25,12 @@ public class AIPathfinding : ActionManager
     [Header("Tracking Variables")]
     float _distanceFromTarget;
     int _currentTarget = 0;
+    Transform LastTile;
 
     void Start()
     {
         TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
+        ActionManagerScript = GetComponent<ActionManager>();
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
         _stats = gameObject.GetComponent<EntityStats>();
         StartPathfinding();
@@ -37,8 +39,8 @@ public class AIPathfinding : ActionManager
     void ResetTurn()
     {
         _currentTarget = 0;
-        SelectedTiles.Clear();
-        SelectedTileActions.Clear();
+        ActionManagerScript.SelectedTiles.Clear();
+        ActionManagerScript.SelectedTileActions.Clear();
         _units.Clear();
         StartPathfinding();
     }
@@ -51,44 +53,63 @@ public class AIPathfinding : ActionManager
         {
             GetPath();
         }
+        else if (_units.Count == 0)
+        {
+            Wander();
+        }
+    }
+
+    void Wander()
+    {
+        if (AvailableTiles.Length != 0)
+            Array.Clear(AvailableTiles, 0, AvailableTiles.Length);
+        AvailableTiles = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(_stats.Max_AP, _stats.Max_AP), 0);
+
+        int RandomTile = UnityEngine.Random.Range(0, AvailableTiles.Length) - 1;
+        int MaxCount = Mathf.RoundToInt(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), AvailableTiles[RandomTile].transform.position));
+        
+        for (int Count = 0; Count < MaxCount; Count++)
+        {
+            GetTiles(AvailableTiles[RandomTile].gameObject);
+        }
     }
 
     void GetPath()
     {
         for (int Count = 0; Count < _stats.Max_AP; Count++)
         {
-            LastTile = GetLastMoveTile();
+            LastTile = ActionManagerScript.GetLastMoveTile(gameObject.transform);
 
             if (_units.Count != 0)
-                _distanceFromTarget = Vector2.Distance(GetLastMoveTile().transform.position, _units[_currentTarget].transform.position);
+                _distanceFromTarget = Vector2.Distance(ActionManagerScript.GetLastMoveTile(gameObject.transform).position, _units[_currentTarget].transform.position);
 
             if (_distanceFromTarget < AttackRange + 0.5f)
             {
-                SelectedTiles.Add(_units[_currentTarget].transform.parent.gameObject);
+                ActionManagerScript.SelectedTiles.Add(_units[_currentTarget].transform.parent.gameObject);
                 _currentTarget++;
-                SelectedTileActions.Add("Attack");
+                ActionManagerScript.SelectedTileActions.Add("Attack");
             }
             else if (_distanceFromTarget > AttackRange + 0.5f)
             {
-                SelectedTiles.Add(GetTiles());
-                SelectedTileActions.Add("Move");
+                ActionManagerScript.SelectedTiles.Add(GetTiles(_units[_currentTarget]));
+                ActionManagerScript.SelectedTileActions.Add("Move");
             }
         }
     }
 
-    GameObject GetTiles()
+    GameObject GetTiles(GameObject Target)
     {
         GameObject Tile = null;
-        float X = GetDirection(LastTile.position.x, _units[_currentTarget].transform.parent.position.x);
-        float Y = GetDirection(LastTile.position.y, _units[_currentTarget].transform.parent.position.y);
-        Vector2 dir = _units[_currentTarget].transform.position - transform.position;
+        float X = GetDirection(LastTile.position.x, Target.transform.parent.position.x);
+        float Y = GetDirection(LastTile.position.y, Target.transform.parent.position.y);
+        Vector2 dir = Target.transform.position - transform.position;
         float _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (_angle < 0) _angle += 360f;
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(LastTile.position.x + X, LastTile.position.y + Y), Vector2.zero);
 
-        if (!hit.collider.gameObject.GetComponent<Tiles>().IsObstacle && hit.collider.gameObject.transform.childCount == 0)
+        if (!hit.collider.gameObject.GetComponent<Tiles>().IsObstacle && hit.collider.gameObject.transform.childCount == 0 && hit.collider.gameObject.GetComponent<SpriteRenderer>().color == Color.white)
             Tile = hit.collider.gameObject;
-        else if (hit.collider.gameObject.GetComponent<Tiles>().IsObstacle || hit.collider.gameObject.transform.childCount > 0)
+        else if (hit.collider.gameObject.GetComponent<Tiles>().IsObstacle || hit.collider.gameObject.transform.childCount > 0 || hit.collider.gameObject.GetComponent<SpriteRenderer>().color != Color.white)
         {
             if (_angle < 44.5f || _angle > 314.5f)
                 Tile = GetValidTiles(new Vector2(LastTile.position.x, LastTile.position.y + 1f), new Vector2(LastTile.position.x + 1f, LastTile.position.y - 1f));

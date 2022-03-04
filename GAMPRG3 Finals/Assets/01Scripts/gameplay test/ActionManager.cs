@@ -16,15 +16,13 @@ public class ActionManager : MonoBehaviour
     [Header("Tracking Variables")]
     [HideInInspector]
     public bool HasAP;
-    [HideInInspector]
-    public Transform LastTile;
 
-    public virtual Transform GetLastMoveTile()
+    public virtual Transform GetLastMoveTile(Transform GameObjectTransform)
     {
         Transform TileTransform = null;
 
         if (!SelectedTileActions.Contains("Move"))
-            TileTransform = ThisUnit.transform.parent;
+            TileTransform = GameObjectTransform.transform.parent;
         else if (SelectedTileActions.Contains("Move"))
         {
             for (int LastIndex = SelectedTileActions.Count - 1; LastIndex >= 0; LastIndex--)

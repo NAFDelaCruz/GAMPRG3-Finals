@@ -9,6 +9,7 @@ public class EntityStats : MonoBehaviour
     public int EXP;
     public int MaxEXP;
     public int RewardEXP;
+
     [Header("Base Stats")]
     public int HP;
     public int Curr_HP;
@@ -21,6 +22,7 @@ public class EntityStats : MonoBehaviour
     public int CON; //Magical Resistance
 
     [Header("Action Points")]
+    public int AttackRange;
     public int Max_AP;
     public int AP;
     [HideInInspector]

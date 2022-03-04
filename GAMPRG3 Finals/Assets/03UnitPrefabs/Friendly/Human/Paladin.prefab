@@ -122,7 +122,6 @@ MonoBehaviour:
   SelectedTiles: []
   SelectedTileActions: []
   HasAP: 0
-  LastTile: {fileID: 0}
 --- !u!114 &5281355524627914544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +145,7 @@ MonoBehaviour:
   INT: 3
   DEF: 2
   CON: 4
+  AttackRange: 1
   Max_AP: 2
   AP: 0
   AP_LevelUp: 0

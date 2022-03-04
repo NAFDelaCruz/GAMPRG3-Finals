@@ -9,6 +9,9 @@ using UnityEngine;
 
 public class GenerateMap : MonoBehaviour
 {
+    [Header("Set Components")]
+    UnitSpawner UnitSpawnerScript;
+
     [Header("Default Values")]
     public GameObject VoidTilePrefab;
 
@@ -57,6 +60,7 @@ public class GenerateMap : MonoBehaviour
     void Start()
     {
         //Each set for a list add here
+        UnitSpawnerScript = GetComponent<UnitSpawner>(); ;
         PrefabChances.Add(TerrainPrefabsChanceValues);
         TilePrefabs.Add(TerrainPrefabs);
 
@@ -99,10 +103,13 @@ public class GenerateMap : MonoBehaviour
                 GameObject TilePrefab = SelectTile(SelectedSet, TotalWeight);
                 CreateTile(TilePrefab, x, y);
             }
+            
+            if (x == MapWidth - 1)
+            {
+                Physics2D.SyncTransforms();
+                LocateStart();
+            }
         }
-
-        Physics2D.SyncTransforms();
-        LocateStart();   
     }
 
     int GetIdUsingPerlin(int x, int y)
@@ -211,6 +218,7 @@ public class GenerateMap : MonoBehaviour
                 StartPoint = GameObject.Find(StartX + "" + StartY);
                 IsStartInvalid = false;
                 StartPoint.GetComponent<SpriteRenderer>().color = Color.red;
+                UnitSpawnerScript.SpawnUnits();
                 LocateEnd();
             }
         }

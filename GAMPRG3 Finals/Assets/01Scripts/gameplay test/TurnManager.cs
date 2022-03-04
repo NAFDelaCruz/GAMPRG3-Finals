@@ -34,13 +34,13 @@ public class TurnManager : MonoBehaviour
             EntityIndex = index1;
             Actions = EntityList[index1].Entity.GetComponent<ActionManager>();
 
-            yield return StartCoroutine(MyFunction());
+            yield return StartCoroutine(DoUnitAction());
         }
-
+        
         TurnEnds.Invoke();
     }
 
-    IEnumerator MyFunction()
+    IEnumerator DoUnitAction()
     {
         for (int index2 = 0; index2 < Actions.SelectedTiles.Count; index2++)
         {
@@ -55,7 +55,6 @@ public class TurnManager : MonoBehaviour
                 _isMoving = false;
                 EntityList[EntityIndex].Entity.transform.parent = Actions.SelectedTiles[index2].transform;
                 EntityList[EntityIndex].Entity.transform.localPosition = new Vector3(0, 0 , 0);
-                Debug.Log("Parented on: "+ Actions.SelectedTiles[index2].name);
                 yield return new WaitForSeconds(0.2f);
             }
             else if (Actions.SelectedTileActions[index2] == "Attack")

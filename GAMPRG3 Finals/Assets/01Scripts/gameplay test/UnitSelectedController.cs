@@ -1,25 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using System;
 
-public class UnitSelectedController : ActionManager
+public class UnitSelectedController : MonoBehaviour
 {
     [Header("Set Components")]
     TurnManager TurnManagerScript;
     UnitSelector UnitSelectorScript;
 
-    [Header("Entity Stats")]
-    public float AttackRange;
-
     [Header("Collections")]
-     [HideInInspector]
+    [HideInInspector]
     public Collider2D[] CollidedTiles;
     [HideInInspector]
     public List<GameObject> AvailableTiles;
     [HideInInspector]
     public List<GameObject> ValidTiles;
+    [HideInInspector]
+    public List<GameObject> AllSelectedTiles;
 
     [Header("Color Code")]
     Color MoveColor = Color.blue;
@@ -29,6 +27,7 @@ public class UnitSelectedController : ActionManager
 
     [Header("Tracking Variables")]
     string TileAction;
+    Transform LastTile;
 
     void Start()
     {
@@ -40,20 +39,20 @@ public class UnitSelectedController : ActionManager
     void ResetTurn()
     {
         UnitSelectorScript.SelectedUnitStats.AP = UnitSelectorScript.SelectedUnitStats.Max_AP;
-        UnmarkTiles(UnitSelectorScript.SelectedUnitActionManager.SelectedTiles);
+        UnmarkTiles(AllSelectedTiles);
         ValidTiles.Clear();
         AvailableTiles.Clear();
         UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Clear();
         UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Clear();
     }
 
-    private void Update()
+    void Update()
     {
         if (UnitSelectorScript.SelectedUnit && UnitSelectorScript.SelectedUnitStats.AP == 0)
-            if (TileAction == "Move")
-                UnmarkTiles(AvailableTiles);
-            else if (TileAction == "Attack")
-                UnmarkTiles(ValidTiles);
+        {
+            UnitSelectorScript.SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
+            DeselectUnit();
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -62,6 +61,7 @@ public class UnitSelectedController : ActionManager
 
             if (ValidTiles.Contains(hit.collider.gameObject))
             {
+                AllSelectedTiles.Add(hit.collider.gameObject);
                 UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Add(hit.collider.gameObject);
                 UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Add(TileAction);
                 ValidTiles.Remove(hit.collider.gameObject);
@@ -87,12 +87,15 @@ public class UnitSelectedController : ActionManager
 
     public void MarkMoveTiles()
     {
-        UnmarkTiles(ValidTiles);
-        ValidTiles.Clear();
-        LastTile = GetLastMoveTile();
-        GetTiles(LastTile, UnitSelectorScript.SelectedUnitStats.AP * 2, AvailableTiles);
-        MarkTiles(MoveColor, AvailableTiles);
-        GetMoveTiles();
+        if (UnitSelectorScript.SelectedUnitStats.AP > 0)
+        {
+            UnmarkTiles(ValidTiles);
+            ValidTiles.Clear();
+            LastTile = UnitSelectorScript.SelectedUnitActionManager.GetLastMoveTile(UnitSelectorScript.SelectedUnit.transform);
+            GetTiles(LastTile, UnitSelectorScript.SelectedUnitStats.AP * 2, AvailableTiles);
+            MarkTiles(MoveColor, AvailableTiles);
+            GetMoveTiles();
+        }
     }
 
     public void GetMoveTiles()
@@ -102,7 +105,7 @@ public class UnitSelectedController : ActionManager
             TileAction = "Move";
             UnmarkTiles(ValidTiles);
             ValidTiles.Clear();
-            LastTile = GetLastMoveTile();
+            LastTile = UnitSelectorScript.SelectedUnitActionManager.GetLastMoveTile(UnitSelectorScript.SelectedUnit.transform);
             GetTiles(LastTile, 1, ValidTiles);
         }
     }
@@ -116,8 +119,8 @@ public class UnitSelectedController : ActionManager
 
         if (UnitSelectorScript.SelectedUnitStats.AP > 0)
         {
-            LastTile = GetLastMoveTile();
-            GetTiles(LastTile, AttackRange * 2, ValidTiles);
+            LastTile = UnitSelectorScript.SelectedUnitActionManager.GetLastMoveTile(UnitSelectorScript.SelectedUnit.transform);
+            GetTiles(LastTile, UnitSelectorScript.SelectedUnitStats.AttackRange * 2, ValidTiles);
             MarkTiles(AttackColor, ValidTiles);
         }
     }
@@ -147,7 +150,7 @@ public class UnitSelectedController : ActionManager
             Array.Clear(CollidedTiles, 0, CollidedTiles.Length);
 
         CollidedTiles = Physics2D.OverlapBoxAll(new Vector2(Tile.position.x, Tile.position.y), new Vector2(Range, Range), 0);
-        
+
         foreach (Collider2D tile in CollidedTiles)
         {
             bool HasFriendly = new bool();
@@ -160,5 +163,16 @@ public class UnitSelectedController : ActionManager
             else if (TileAction == "Attack" && !tile.gameObject.GetComponent<Tiles>().IsObstacle && !HasFriendly && (tile.gameObject.GetComponent<SpriteRenderer>().color == Color.white || tile.gameObject.GetComponent<SpriteRenderer>().color == AttackColor))
                 ChosenList.Add(tile.gameObject);
         }
+    }
+
+    public void DeselectUnit()
+    {
+        if (TileAction == "Move")
+            UnmarkTiles(AvailableTiles);
+        else if (TileAction == "Attack")
+            UnmarkTiles(ValidTiles);
+
+        ValidTiles.Clear();
+        AvailableTiles.Clear();
     }
 }
