@@ -39,7 +39,11 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+>>>>>>> parent of a520aac (Camera Restrictions)
 =======
   m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 >>>>>>> parent of a520aac (Camera Restrictions)
@@ -125,6 +129,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &22109210
 GameObject:
@@ -505,6 +510,8 @@ RectTransform:
   m_AnchoredPosition: {x: -308.7, y: 94.100006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> parent of a520aac (Camera Restrictions)
 =======
 >>>>>>> parent of a520aac (Camera Restrictions)
 --- !u!1 &705507993
@@ -999,7 +1006,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a520aac (Camera Restrictions)
   SelectedTiles: []
   SelectedTileActions: []
   LastTile: {fileID: 0}
@@ -1178,7 +1188,10 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of a520aac (Camera Restrictions)
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
 >>>>>>> parent of a520aac (Camera Restrictions)
@@ -1252,8 +1265,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 22109212}
 =======
+=======
+>>>>>>> parent of a520aac (Camera Restrictions)
   m_Father: {fileID: 0}
 >>>>>>> parent of a520aac (Camera Restrictions)
   m_RootOrder: 0
