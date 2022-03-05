@@ -138,6 +138,8 @@ MonoBehaviour:
   EXP: 0
   MaxEXP: 15
   RewardEXP: 0
+  IsMelee: 0
+  IsPhysical: 0
   HP: 4
   Curr_HP: 0
   AGI: 2
@@ -145,7 +147,7 @@ MonoBehaviour:
   INT: 5
   DEF: 2
   CON: 4
-  AttackRange: 0
+  AttackRange: 4
   Max_AP: 4
   AP: 0
   AP_LevelUp: 0

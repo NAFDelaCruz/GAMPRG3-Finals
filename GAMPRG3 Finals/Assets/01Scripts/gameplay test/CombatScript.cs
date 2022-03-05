@@ -43,12 +43,12 @@ public class CombatScript : MonoBehaviour
                 break;
             case attackType.physical:
                 Debug.Log("Physical");
-                mod1 = 1.5f;
-                mod2 = 0.8f;
+                mod1 = 1.3f;
+                mod2 = 0.7f;
                 break;
             case attackType.magical:
                 Debug.Log("Magical");
-                mod1 = 1.8f;
+                mod1 = 1.5f;
                 mod2 = 1f;
                 break;
             case attackType.hybrid:

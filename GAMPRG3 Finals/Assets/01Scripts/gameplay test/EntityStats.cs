@@ -10,6 +10,10 @@ public class EntityStats : MonoBehaviour
     public int MaxEXP;
     public int RewardEXP;
 
+    [Header("Attack Type")]
+    public bool IsMelee;
+    public bool IsPhysical;
+
     [Header("Base Stats")]
     public int HP;
     public int Curr_HP;
