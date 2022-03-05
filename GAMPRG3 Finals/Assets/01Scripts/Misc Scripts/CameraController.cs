@@ -51,23 +51,5 @@ public class CameraController : MonoBehaviour
         {
             gameCamera.transform.position += new Vector3(MovementSensitivity * Time.deltaTime, 0, 0);
         }
-
-        if (this.transform.position.x > xBorder)
-        {
-            this.transform.position = new Vector3(xBorder, this.transform.position.y, this.transform.position.z);
-        }
-        if (this.transform.position.x < 0)
-        {
-            this.transform.position = new Vector3(0, this.transform.position.y, this.transform.position.z);
-        }
-        if (this.transform.position.y > yBorder)
-        {
-            this.transform.position = new Vector3(this.transform.position.x, yBorder, this.transform.position.z);
-        }
-        if (this.transform.position.y < 0)
-        {
-            this.transform.position = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-        }
-
     }
 }
