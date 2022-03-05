@@ -15,8 +15,11 @@ public class APBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fill_perc = (float)entityStats.AP / (float)entityStats.Max_AP;
-        Fill.GetComponent<Image>().fillAmount = fill_perc;
+        if (entityStats != null)
+        {
+            fill_perc = (float)entityStats.AP / (float)entityStats.Max_AP;
+            Fill.GetComponent<Image>().fillAmount = fill_perc;
+        }
     }
 
     public void UpdateSelectedTarget()

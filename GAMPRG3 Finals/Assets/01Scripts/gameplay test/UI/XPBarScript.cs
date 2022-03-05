@@ -15,8 +15,11 @@ public class XPBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fill_perc = (float)entityStats.EXP / (float)entityStats.MaxEXP;
-        Fill.GetComponent<Image>().fillAmount = fill_perc;
+        if (entityStats != null)
+        {
+            fill_perc = (float)entityStats.EXP / (float)entityStats.MaxEXP;
+            Fill.GetComponent<Image>().fillAmount = fill_perc;
+        }
     }
 
     public void UpdateSelectedTarget()

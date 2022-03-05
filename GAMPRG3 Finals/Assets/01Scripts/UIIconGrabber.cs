@@ -17,8 +17,7 @@ public class UIIconGrabber : MonoBehaviour
         }
         else
         {
-            this.GetComponent<SpriteRenderer>().sprite = null;
-            Debug.Log("No Sprite");
+            this.GetComponent<Image>().sprite = null;
         }
     }
 }

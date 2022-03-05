@@ -15,8 +15,11 @@ public class HPBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fill_perc = (float)entityStats.Curr_HP / (float)entityStats.HP;
-        Fill.GetComponent<Image>().fillAmount = fill_perc;
+        if (entityStats != null)
+        {
+            fill_perc = (float)entityStats.Curr_HP / (float)entityStats.HP;
+            Fill.GetComponent<Image>().fillAmount = fill_perc;
+        }
     }
 
     public void UpdateSelectedTarget()
