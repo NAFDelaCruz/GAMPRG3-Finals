@@ -218,7 +218,6 @@ public class GenerateMap : MonoBehaviour
                 StartPoint = GameObject.Find(StartX + "" + StartY);
                 IsStartInvalid = false;
                 StartPoint.GetComponent<SpriteRenderer>().color = Color.red;
-                UnitSpawnerScript.SpawnUnits();
                 LocateEnd();
             }
         }
@@ -238,6 +237,7 @@ public class GenerateMap : MonoBehaviour
                 EndPoint = GameObject.Find(EndX + "" + EndY);
                 IsEndInvalid = false;
                 EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+                UnitSpawnerScript.SpawnUnits(StartPoint, Tiles);
             }
         }
 
