@@ -120,10 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisUnit: {fileID: 4853175665282989455}
+  ThisUnitStats: {fileID: 0}
   SelectedTiles: []
   SelectedTileActions: []
-  HasAP: 0
 --- !u!114 &-1005514845212582162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +140,6 @@ MonoBehaviour:
   _objects: []
   _units: []
   AvailableTiles: []
-  AttackRange: 1
   Target: FriendlyUnit
 --- !u!114 &-1131906380419530360
 MonoBehaviour:
@@ -166,7 +164,7 @@ MonoBehaviour:
   INT: 2
   DEF: 1
   CON: 1
-  AttackRange: 0
+  AttackRange: 1
   Max_AP: 3
   AP: 0
   AP_LevelUp: 0

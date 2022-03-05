@@ -24,11 +24,14 @@ public class TurnManager : MonoBehaviour
     
     public void StartTurn()
     {
+        ObtainEntities();
         StartCoroutine(SlowLoop());
     }
 
     IEnumerator SlowLoop()
     {
+        yield return new WaitForSeconds(1f);
+
         for (int index1 = 0; index1 < EntityList.Count; index1++)
         {
             EntityIndex = index1;
@@ -71,9 +74,6 @@ public class TurnManager : MonoBehaviour
         if (_isMoving)
             EntityList[EntityIndex].Entity.transform.Translate(new Vector2(X, Y) * 5f * Time.deltaTime);
 
-        if (EntityList.Count == 0)
-            ObtainEntities();
-
         if (Input.GetKeyDown(KeyCode.E))
             StartTurn();
     }
@@ -88,6 +88,8 @@ public class TurnManager : MonoBehaviour
 
     void ObtainEntities()
     {
+        EntityList.Clear();
+
         for (int i = 0; i < Map.transform.childCount; i++)
         {
             GameObject currentTile = Map.transform.GetChild(i).gameObject;

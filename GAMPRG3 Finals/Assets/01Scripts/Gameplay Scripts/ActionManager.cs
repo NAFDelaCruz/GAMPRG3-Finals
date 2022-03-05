@@ -5,7 +5,8 @@ using UnityEngine;
 public class ActionManager : MonoBehaviour
 {
     [Header("Set Components")]
-    public GameObject ThisUnit;
+    [HideInInspector]
+    public EntityStats ThisUnitStats;
 
     [Header("Collections")]
     [HideInInspector]
@@ -13,9 +14,11 @@ public class ActionManager : MonoBehaviour
     [HideInInspector]
     public List<string> SelectedTileActions;
 
-    [Header("Tracking Variables")]
-    [HideInInspector]
-    public bool HasAP;
+    private void Start()
+    {
+        ThisUnitStats = GetComponent<EntityStats>();
+        ResetAP(); 
+    }
 
     public virtual Transform GetLastMoveTile(Transform GameObjectTransform)
     {
@@ -36,5 +39,12 @@ public class ActionManager : MonoBehaviour
         }
 
         return TileTransform;
+    }
+
+    public void ResetAP()
+    {
+        ThisUnitStats.AP = ThisUnitStats.Max_AP;
+        SelectedTiles.Clear();
+        SelectedTileActions.Clear();
     }
 }

@@ -13,13 +13,12 @@ public class AIPathfinding : MonoBehaviour
     [Header("Collections")]
     [HideInInspector]
     public Collider[] _objects;
-    [HideInInspector]
+    //[HideInInspector]
     public List<GameObject> _units;
     [HideInInspector]
     public Collider2D[] AvailableTiles;
 
     [Header("Entity Stats")]
-    public int AttackRange;
     public string Target;
 
     [Header("Tracking Variables")]
@@ -27,13 +26,18 @@ public class AIPathfinding : MonoBehaviour
     int _currentTarget = 0;
     Transform LastTile;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            StartPathfinding();
+    }
+
     void Start()
     {
         TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
         ActionManagerScript = GetComponent<ActionManager>();
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
         _stats = gameObject.GetComponent<EntityStats>();
-        StartPathfinding();
     }
 
     void ResetTurn()
@@ -42,7 +46,6 @@ public class AIPathfinding : MonoBehaviour
         ActionManagerScript.SelectedTiles.Clear();
         ActionManagerScript.SelectedTileActions.Clear();
         _units.Clear();
-        StartPathfinding();
     }
 
     void StartPathfinding()
@@ -83,13 +86,13 @@ public class AIPathfinding : MonoBehaviour
             if (_units.Count != 0)
                 _distanceFromTarget = Vector2.Distance(ActionManagerScript.GetLastMoveTile(gameObject.transform).position, _units[_currentTarget].transform.position);
 
-            if (_distanceFromTarget < AttackRange + 0.5f)
+            if (_distanceFromTarget < ActionManagerScript.ThisUnitStats.AttackRange + 0.5f)
             {
                 ActionManagerScript.SelectedTiles.Add(_units[_currentTarget].transform.parent.gameObject);
                 _currentTarget++;
                 ActionManagerScript.SelectedTileActions.Add("Attack");
             }
-            else if (_distanceFromTarget > AttackRange + 0.5f)
+            else if (_distanceFromTarget > ActionManagerScript.ThisUnitStats.AttackRange + 0.5f)
             {
                 ActionManagerScript.SelectedTiles.Add(GetTiles(_units[_currentTarget]));
                 ActionManagerScript.SelectedTileActions.Add("Move");
@@ -154,7 +157,7 @@ public class AIPathfinding : MonoBehaviour
 
     void GetTargets()
     {
-        _objects = Physics.OverlapSphere(transform.position, _stats.Max_AP + (AttackRange - 1));
+        _objects = Physics.OverlapSphere(transform.position, _stats.Max_AP + (ActionManagerScript.ThisUnitStats.AttackRange - 1));
 
         foreach (Collider Object in _objects)
         {

@@ -118,10 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisUnit: {fileID: 8903513203843796560}
+  ThisUnitStats: {fileID: 0}
+  SelectedMoveColor: {r: 1, g: 0, b: 0.8873906, a: 0}
+  SelectedAttackColor: {r: 0.4811321, g: 0, b: 0.42641503, a: 0}
   SelectedTiles: []
   SelectedTileActions: []
-  HasAP: 0
 --- !u!114 &-1559078281014610035
 MonoBehaviour:
   m_ObjectHideFlags: 0

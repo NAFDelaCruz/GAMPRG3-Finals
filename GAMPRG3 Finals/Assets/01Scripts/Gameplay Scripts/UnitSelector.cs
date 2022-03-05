@@ -9,8 +9,7 @@ public class UnitSelector : MonoBehaviour
     public EntityStats SelectedUnitStats;
     public UnitSelectedController UnitSelectedControllerScript;
     public RaycastHit hit;
-
-    // Update is called once per frame
+    
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -33,14 +32,16 @@ public class UnitSelector : MonoBehaviour
                     SelectedUnit.GetComponent<SpriteRenderer>().color = Color.green;
                     SelectedUnitActionManager = SelectedUnit.GetComponent<ActionManager>();
                     SelectedUnitStats = SelectedUnit.GetComponent<EntityStats>();
-                }
-                
-                if (!SelectedUnitActionManager.HasAP)
-                {
-                    SelectedUnitStats.AP = SelectedUnitStats.Max_AP;
-                    SelectedUnitActionManager.HasAP = true;
+                    UnitSelectedControllerScript.TurnManagerScript.TurnEnds.AddListener(SelectedUnitActionManager.ResetAP);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && SelectedUnit)
+        {
+            SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
+            SelectedUnit = null;
+            UnitSelectedControllerScript.DeselectUnit();
         }
     }
 }   

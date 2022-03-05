@@ -34,7 +34,9 @@ public class GenerateMap : MonoBehaviour
     public int YOffset = 0; // v- +^
 
     [Header("Start and End Points")]
+    [HideInInspector]
     public Collider2D[] Tiles;
+    public List<GameObject> ValidTiles;
     public GameObject StartPoint;
     public GameObject EndPoint;
     string tileName;
@@ -203,17 +205,17 @@ public class GenerateMap : MonoBehaviour
         {
             int StartX = Random.Range(0, MapWidth - 1);
             int StartY = Random.Range(0, MapHeight - 1);
-            int ValidTileCount = 0;
-            
+            ValidTiles = new List<GameObject>();
+
             Tiles = Physics2D.OverlapBoxAll(new Vector2(StartX, StartY), new Vector2(1.5f, 1.5f), 0f);
 
             foreach (Collider2D tile in Tiles)
             {
                 if (!tile.GetComponent<Tiles>().IsObstacle)
-                    ValidTileCount++;
+                    ValidTiles.Add(tile.gameObject);
             }
 
-            if (ValidTileCount >= 4 && !GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle)
+            if (ValidTiles.Count >= 4 && !GameObject.Find(StartX + "" + StartY).GetComponent<Tiles>().IsObstacle)
             {
                 StartPoint = GameObject.Find(StartX + "" + StartY);
                 IsStartInvalid = false;
@@ -237,7 +239,7 @@ public class GenerateMap : MonoBehaviour
                 EndPoint = GameObject.Find(EndX + "" + EndY);
                 IsEndInvalid = false;
                 EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
-                UnitSpawnerScript.SpawnUnits(StartPoint, Tiles);
+                UnitSpawnerScript.SpawnUnits(StartPoint, ValidTiles);
             }
         }
 

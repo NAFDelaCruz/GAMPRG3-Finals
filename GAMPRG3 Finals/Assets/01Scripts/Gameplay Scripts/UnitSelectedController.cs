@@ -6,7 +6,8 @@ using System;
 public class UnitSelectedController : MonoBehaviour
 {
     [Header("Set Components")]
-    TurnManager TurnManagerScript;
+    [HideInInspector]
+    public TurnManager TurnManagerScript;
     UnitSelector UnitSelectorScript;
 
     [Header("Collections")]
@@ -38,12 +39,9 @@ public class UnitSelectedController : MonoBehaviour
 
     void ResetTurn()
     {
-        UnitSelectorScript.SelectedUnitStats.AP = UnitSelectorScript.SelectedUnitStats.Max_AP;
         UnmarkTiles(AllSelectedTiles);
         ValidTiles.Clear();
         AvailableTiles.Clear();
-        UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Clear();
-        UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Clear();
     }
 
     void Update()
