@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712515807}
   - component: {fileID: 712515808}
+  - component: {fileID: 712515809}
   m_Layer: 0
   m_Name: Map 1
   m_TagString: Untagged
@@ -286,6 +287,26 @@ MonoBehaviour:
   VoidPerlinSelector: 0.325
   VoidPerlinXOffset: 0
   VoidPerlinYOffset: 0
+--- !u!114 &712515809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712515806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46dbae400264ed4babd7139e01655b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestUnit: {fileID: 1876529308232886162, guid: e7420e1d3fea9404a837c02cdedbe95a,
+    type: 3}
+  TestPartyUnits:
+  - {fileID: 8113872044718001315, guid: c311b9ac8de366445bdc154c866f9ade, type: 3}
+  - {fileID: 4347820926617255558, guid: 6cd4a08457b1d924ca06cb331b15a97e, type: 3}
+  - {fileID: 8903513203843796560, guid: 5078f500c10f2f749be66b8055d23b33, type: 3}
+  - {fileID: 4268109712708635802, guid: e12bbd03753c46e4e945e273c8030d91, type: 3}
+  SpawnTiles: []
 --- !u!1 &760755502
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +318,6 @@ GameObject:
   - component: {fileID: 760755504}
   - component: {fileID: 760755506}
   - component: {fileID: 760755507}
-  - component: {fileID: 760755503}
   - component: {fileID: 760755505}
   m_Layer: 0
   m_Name: Game Manager
@@ -306,27 +326,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &760755503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760755502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c46dbae400264ed4babd7139e01655b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestUnit: {fileID: 1876529308232886162, guid: e7420e1d3fea9404a837c02cdedbe95a,
-    type: 3}
-  Map: {fileID: 712515806}
-  TestPartyUnits:
-  - {fileID: 8113872044718001315, guid: c311b9ac8de366445bdc154c866f9ade, type: 3}
-  - {fileID: 4347820926617255558, guid: 6cd4a08457b1d924ca06cb331b15a97e, type: 3}
-  - {fileID: 8903513203843796560, guid: 5078f500c10f2f749be66b8055d23b33, type: 3}
-  - {fileID: 4268109712708635802, guid: e12bbd03753c46e4e945e273c8030d91, type: 3}
-  SpawnTiles: []
 --- !u!4 &760755504
 Transform:
   m_ObjectHideFlags: 0
@@ -374,6 +373,7 @@ MonoBehaviour:
   SelectedUnit: {fileID: 0}
   SelectedUnitActionManager: {fileID: 0}
   SelectedUnitStats: {fileID: 0}
+  UnitSelectedControllerScript: {fileID: 0}
 --- !u!114 &760755507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,13 +386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b079e91c4e233a7469405a2f231ddb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedTiles: []
-  SelectedTileActions: []
-  LastTile: {fileID: 0}
-  AttackRange: 0
   CollidedTiles: []
   AvailableTiles: []
   ValidTiles: []
+  AllSelectedTiles: []
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
