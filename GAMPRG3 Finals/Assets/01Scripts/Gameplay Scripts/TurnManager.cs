@@ -15,6 +15,8 @@ public class TurnManager : MonoBehaviour
     public GameObject Map;
     public List<EntityPriority> EntityList;
     public ActionManager Actions;
+    public EntityStats Stats;
+    public CombatScript Combat;
     public UnityEvent TurnStarts;
     public UnityEvent TurnEnds;
     public bool _isTurnNotRunning = true;
@@ -26,6 +28,7 @@ public class TurnManager : MonoBehaviour
     
     public void StartTurn()
     {
+        Combat = GetComponent<CombatScript>();
         ObtainEntities();
         StartCoroutine(SlowLoop());
     }
@@ -41,6 +44,7 @@ public class TurnManager : MonoBehaviour
         {
             EntityIndex = index1;
             Actions = EntityList[index1].Entity.GetComponent<ActionManager>();
+            Stats = EntityList[index1].Entity.GetComponent<EntityStats>();
 
             yield return StartCoroutine(DoUnitAction());
         }
@@ -55,11 +59,11 @@ public class TurnManager : MonoBehaviour
         {
             if (Actions.SelectedTileActions[index2] == "Rest")
             {
-                int UnitMaxHP = EntityList[EntityIndex].Entity.GetComponent<EntityStats>().HP;
+                int UnitMaxHP = Stats.HP;
                 int AmountToHeal = Mathf.FloorToInt(UnitMaxHP * 0.1f);
                 if (AmountToHeal == 0) AmountToHeal = 1;
-                EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP += AmountToHeal;
-                if (EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP > UnitMaxHP) EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP = UnitMaxHP;
+                Stats.Curr_HP += AmountToHeal;
+                if (Stats.Curr_HP > UnitMaxHP) Stats.Curr_HP = UnitMaxHP;
                 yield return new WaitForSeconds(1f);
             }
             else if (Actions.SelectedTileActions[index2] == "Move")
@@ -77,7 +81,17 @@ public class TurnManager : MonoBehaviour
             }
             else if (Actions.SelectedTileActions[index2] == "Attack")
             {
-                Debug.Log("CYKA BLYAT");
+                EntityStats Target = new EntityStats();
+                Combat.SetModifiers(Stats.IsPhysical);
+                if (Actions.SelectedTiles[index2].transform.childCount > 0)
+                    Target = Actions.SelectedTiles[index2].GetComponentInChildren<EntityStats>();
+                else
+                    break;
+
+                if (Stats.IsPhysical)
+                    Target.Curr_HP -= Combat.DamageCalc(Stats.STR, Target.DEF);
+                else if (!Stats.IsPhysical)
+                    Target.Curr_HP -= Combat.DamageCalc(Stats.INT, Target.CON);
             }
         }
 

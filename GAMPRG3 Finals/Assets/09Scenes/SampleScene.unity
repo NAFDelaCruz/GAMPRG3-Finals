@@ -12190,6 +12190,8 @@ MonoBehaviour:
   Map: {fileID: 712515806}
   EntityList: []
   Actions: {fileID: 0}
+  Stats: {fileID: 0}
+  Combat: {fileID: 0}
   TurnStarts:
     m_PersistentCalls:
       m_Calls: []

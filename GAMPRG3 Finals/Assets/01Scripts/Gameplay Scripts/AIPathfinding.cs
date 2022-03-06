@@ -18,7 +18,7 @@ public class AIPathfinding : MonoBehaviour
     [HideInInspector]
     public Collider2D[] AvailableTiles;
     [HideInInspector]
-    public Collider2D[] WanderAvailableTiles;
+    public List<GameObject> WanderAvailableTiles;
 
     [Header("Entity Stats")]
     public string Target;
@@ -61,11 +61,15 @@ public class AIPathfinding : MonoBehaviour
 
     void Wander()
     {
-        if (WanderAvailableTiles.Length != 0)
-            Array.Clear(WanderAvailableTiles, 0, WanderAvailableTiles.Length);
-        WanderAvailableTiles = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(_stats.Max_AP, _stats.Max_AP), 0);
+        Collider2D[] tileCollection = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(_stats.Max_AP, _stats.Max_AP), 0);
 
-        int RandomTile = UnityEngine.Random.Range(0, WanderAvailableTiles.Length - 1);
+        foreach (Collider2D tile in tileCollection)
+        {
+            if (!tile.GetComponent<Tiles>().IsObstacle && tile.transform.childCount == 0)
+                WanderAvailableTiles.Add(tile.gameObject);
+        }
+
+        int RandomTile = UnityEngine.Random.Range(0, WanderAvailableTiles.Count - 1);
         int MaxCount = Mathf.RoundToInt(Vector2.Distance(new Vector2(transform.parent.position.x, transform.parent.position.y), WanderAvailableTiles[RandomTile].transform.position));
 
         for (int Count = 0; Count < MaxCount; Count++)
@@ -88,6 +92,7 @@ public class AIPathfinding : MonoBehaviour
             if (_distanceFromTarget < ActionManagerScript.ThisUnitStats.AttackRange + 0.5f)
             {
                 ActionManagerScript.SelectedTiles.Add(_units[_currentTarget].transform.parent.gameObject);
+                if (_currentTarget < _units.Count - 1)
                 _currentTarget++;
                 ActionManagerScript.SelectedTileActions.Add("Attack");
             }
