@@ -84,7 +84,6 @@ public class UnitSelectedController : MonoBehaviour
     {
         if (UnitSelectorScript.SelectedUnitStats.AP >= 2)
         {
-            Debug.Log("AddedRest");
             UnitSelectorScript.SelectedUnitStats.AP -= 2;
             UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Add("Rest");
             UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Add(UnitSelectorScript.SelectedUnit.transform.parent.gameObject);
@@ -97,6 +96,8 @@ public class UnitSelectedController : MonoBehaviour
         {
             UnmarkTiles(ValidTiles);
             ValidTiles.Clear();
+            UnmarkTiles(AvailableTiles);
+            AvailableTiles.Clear();
             LastTile = UnitSelectorScript.SelectedUnitActionManager.GetLastMoveTile(UnitSelectorScript.SelectedUnit.transform);
             GetTiles(LastTile, UnitSelectorScript.SelectedUnitStats.AP * 2, AvailableTiles);
             MarkTiles(MoveColor, AvailableTiles);

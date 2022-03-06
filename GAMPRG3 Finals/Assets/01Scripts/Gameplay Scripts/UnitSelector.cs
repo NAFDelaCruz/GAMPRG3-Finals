@@ -11,6 +11,8 @@ public class UnitSelector : MonoBehaviour
     public UnitSelectedController UnitSelectedControllerScript;
     public TurnManager TurnManagerScript;
     public RaycastHit hit;
+    [HideInInspector]
+    public bool SwitchedUnits;
 
     private void Start()
     {
@@ -28,12 +30,14 @@ public class UnitSelector : MonoBehaviour
             {
                 if (hit.collider && SelectedUnit && SelectedUnit == hit.collider.gameObject)
                 {
+                    StartCoroutine(SwitchedUnit());
                     SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
                     SelectedUnit = null;
                     UnitSelectedControllerScript.DeselectUnit();
                 }
                 else if (hit.collider && hit.collider.CompareTag("FriendlyUnit"))
                 {
+                    StartCoroutine(SwitchedUnit());
                     UnitSelectedControllerScript.DeselectUnit();
                     if (SelectedUnit) SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
                     SelectedUnit = hit.collider.gameObject;
@@ -44,6 +48,13 @@ public class UnitSelector : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator SwitchedUnit()
+    {
+        SwitchedUnits = true;
+        yield return new WaitForSeconds(0.2f);
+        SwitchedUnits = false;
     }
     
     public void StartTurn()
