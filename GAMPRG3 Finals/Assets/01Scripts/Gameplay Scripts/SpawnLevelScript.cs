@@ -41,7 +41,7 @@ public class SpawnLevelScript : MonoBehaviour
 
     private void SetNewLevel()
     {
-        setLevel = Mathf.FloorToInt(Random.Range(difficultyManager.Stage-3,difficultyManager.Stage+4));
+        setLevel = Mathf.FloorToInt(Random.Range(difficultyManager.Difficulty-3,difficultyManager.Difficulty+4));
     }
 
     public void SetRewardEXP()

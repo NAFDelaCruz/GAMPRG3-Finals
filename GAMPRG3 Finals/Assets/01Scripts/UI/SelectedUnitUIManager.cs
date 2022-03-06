@@ -10,7 +10,7 @@ public class SelectedUnitUIManager : MonoBehaviour
     public UnitSelector UnitSelector;
     public Canvas PlayerUI;
 
-    [Header("Set UI Text Components")]
+    [Header("Set UI Components")]
     public GameObject EXP;
     public GameObject LVL;
     public GameObject HP;
@@ -20,12 +20,21 @@ public class SelectedUnitUIManager : MonoBehaviour
     public GameObject DEF;
     public GameObject CON;
     public GameObject AGI;
+    public GameObject DamageType;
+    public GameObject RangeType;
+    public GameObject RangeValue;
+    public GameObject TypeIcon;
 
     [Header("Set UI Image Components")]
     public Image UnitSprite;
     public Image HPFill;
     public Image APFill;
     public Image EXPFill;
+
+    public Sprite PhysM;
+    public Sprite PhysR;
+    public Sprite MagiM;
+    public Sprite MagiR;
 
     [Header("UI Component Values")]
     float EXPFillPercent;
@@ -68,6 +77,33 @@ public class SelectedUnitUIManager : MonoBehaviour
 
             AGI.GetComponent<TMP_Text>().text = "AGI: " + UnitSelector.SelectedUnitStats.AGI;
 
+            RangeValue.GetComponent<TMP_Text>().text = "Range: " + UnitSelector.SelectedUnitStats.AttackRange;
+
+            //Damage and Range type
+            if (UnitSelector.SelectedUnitStats.IsPhysical && UnitSelector.SelectedUnitStats.IsMelee) //Phys - Melee
+            {
+                DamageType.GetComponent<TMP_Text>().text = "Physical";
+                RangeType.GetComponent<TMP_Text>().text = "Melee";
+                TypeIcon.GetComponent<Image>().sprite = PhysM;
+            }
+            if (UnitSelector.SelectedUnitStats.IsPhysical && !UnitSelector.SelectedUnitStats.IsMelee) //Phys - Ranged
+            {
+                DamageType.GetComponent<TMP_Text>().text = "Physical";
+                RangeType.GetComponent<TMP_Text>().text = "Ranged";
+                TypeIcon.GetComponent<Image>().sprite = PhysR;
+            }
+            if (!UnitSelector.SelectedUnitStats.IsPhysical && UnitSelector.SelectedUnitStats.IsMelee) //Magi - Melee
+            {
+                DamageType.GetComponent<TMP_Text>().text = "Magic";
+                RangeType.GetComponent<TMP_Text>().text = "Melee";
+                TypeIcon.GetComponent<Image>().sprite = MagiM;
+            }
+            if (!UnitSelector.SelectedUnitStats.IsPhysical && !UnitSelector.SelectedUnitStats.IsMelee) //Magi - Ranged
+            {
+                DamageType.GetComponent<TMP_Text>().text = "Magic";
+                RangeType.GetComponent<TMP_Text>().text = "Ranged";
+                TypeIcon.GetComponent<Image>().sprite = MagiR;
+            }
 
         }
         else if (UnitSelector.SelectedUnit == null)
