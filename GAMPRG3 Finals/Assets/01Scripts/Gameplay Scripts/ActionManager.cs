@@ -7,6 +7,8 @@ public class ActionManager : MonoBehaviour
     [Header("Set Components")]
     [HideInInspector]
     public EntityStats ThisUnitStats;
+    [HideInInspector]
+    public Animator ThisUnitAnimator;
 
     [Header("Collections")]
     [HideInInspector]
@@ -16,6 +18,7 @@ public class ActionManager : MonoBehaviour
 
     private void Start()
     {
+        ThisUnitAnimator = GetComponent<Animator>();
         ThisUnitStats = GetComponent<EntityStats>();
         ResetAP(); 
     }

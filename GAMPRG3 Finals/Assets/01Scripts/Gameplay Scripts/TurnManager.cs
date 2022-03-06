@@ -73,25 +73,40 @@ public class TurnManager : MonoBehaviour
 
                 LastPos = EntityList[EntityIndex].Entity.transform.position;
                 _isMoving = true;
+                Actions.ThisUnitAnimator.SetBool("Moving", _isMoving);
                 yield return new WaitForSeconds(0.2f);
                 _isMoving = false;
+                Actions.ThisUnitAnimator.SetBool("Moving", _isMoving);
                 EntityList[EntityIndex].Entity.transform.parent = Actions.SelectedTiles[index2].transform;
                 EntityList[EntityIndex].Entity.transform.localPosition = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(0.2f);
             }
             else if (Actions.SelectedTileActions[index2] == "Attack")
             {
-                EntityStats Target = new EntityStats();
+                ActionManager Target = null;
                 Combat.SetModifiers(Stats.IsPhysical);
+                
+                Actions.ThisUnitAnimator.SetTrigger("Attack");
+
                 if (Actions.SelectedTiles[index2].transform.childCount > 0)
-                    Target = Actions.SelectedTiles[index2].GetComponentInChildren<EntityStats>();
+                {
+                    Target = Actions.SelectedTiles[index2].GetComponentInChildren<ActionManager>();
+                    Target.ThisUnitAnimator.SetTrigger("Hit");
+                }
                 else
                     break;
-
+                
                 if (Stats.IsPhysical)
-                    Target.Curr_HP -= Combat.DamageCalc(Stats.STR, Target.DEF);
+                    Target.ThisUnitStats.Curr_HP -= Combat.DamageCalc(Stats.STR, Target.ThisUnitStats.DEF, Stats.IsMelee);
                 else if (!Stats.IsPhysical)
-                    Target.Curr_HP -= Combat.DamageCalc(Stats.INT, Target.CON);
+                    Target.ThisUnitStats.Curr_HP -= Combat.DamageCalc(Stats.INT, Target.ThisUnitStats.CON, Stats.IsMelee);
+                
+                if (Target.ThisUnitStats.Curr_HP <= 0)
+                {
+                    Target.ThisUnitAnimator.SetBool("Death", true);
+                    yield return new WaitForSeconds(1f);
+                    Destroy(Target.gameObject);
+                }
             }
         }
 
@@ -102,9 +117,6 @@ public class TurnManager : MonoBehaviour
     {
         if (_isMoving)
             EntityList[EntityIndex].Entity.transform.Translate(new Vector2(X, Y) * 5f * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.E))
-            StartTurn();
     }
 
     float GetDirection(float LocalCoord, float TargetCoord)

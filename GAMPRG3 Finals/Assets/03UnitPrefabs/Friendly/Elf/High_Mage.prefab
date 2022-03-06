@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -2599581915725281276}
   m_Layer: 0
   m_Name: High_Mage
-  m_TagString: Untagged
+  m_TagString: FriendlyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisUnitStats: {fileID: 0}
+  ThisUnitAnimator: {fileID: 0}
   SelectedTiles: []
   SelectedTileActions: []
 --- !u!114 &-4689701144288734775

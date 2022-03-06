@@ -8,6 +8,7 @@ public class UnitSelector : MonoBehaviour
     public GameObject SelectedUnit;
     public ActionManager SelectedUnitActionManager;
     public EntityStats SelectedUnitStats;
+    public SceneChanger SceneChangerScript;
     public UnitSelectedController UnitSelectedControllerScript;
     public TurnManager TurnManagerScript;
     public RaycastHit hit;
@@ -17,6 +18,7 @@ public class UnitSelector : MonoBehaviour
     private void Start()
     {
         TurnManagerScript = GetComponent<TurnManager>();
+        SceneChangerScript = GetComponent<SceneChanger>();
         TurnManagerScript.TurnStarts.AddListener(StartTurn);
     }
 
@@ -24,7 +26,7 @@ public class UnitSelector : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && TurnManagerScript._isTurnNotRunning)
+        if (Input.GetMouseButtonDown(0) && TurnManagerScript._isTurnNotRunning && SceneChangerScript.IsInGame)
         {
             if (Physics.Raycast(ray, out hit))
             {

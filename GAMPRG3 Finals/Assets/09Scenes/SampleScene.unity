@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008911141, g: 0.009780865, b: 0.011207579, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12648,7 +12648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712515806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05a15caa402f30247b7822574c6e7bc4, type: 3}
   m_Name: 
@@ -13570,6 +13570,7 @@ GameObject:
   - component: {fileID: 760755503}
   - component: {fileID: 760755509}
   - component: {fileID: 760755510}
+  - component: {fileID: 760755511}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -13644,6 +13645,7 @@ MonoBehaviour:
   SelectedUnit: {fileID: 0}
   SelectedUnitActionManager: {fileID: 0}
   SelectedUnitStats: {fileID: 0}
+  SceneChangerScript: {fileID: 0}
   UnitSelectedControllerScript: {fileID: 760755507}
   TurnManagerScript: {fileID: 0}
   SwitchedUnits: 0
@@ -13758,6 +13760,20 @@ MonoBehaviour:
   - {fileID: 649589063}
   - {fileID: 617180180}
   - {fileID: 2128252337}
+--- !u!114 &760755511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760755502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17949bd5b3639ae4f9e5795518814c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mod1: 0
+  mod2: 0
 --- !u!1001 &766108902
 PrefabInstance:
   m_ObjectHideFlags: 0

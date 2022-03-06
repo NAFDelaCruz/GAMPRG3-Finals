@@ -21,14 +21,17 @@ public class CombatScript : MonoBehaviour
         }
     }
 
-    public int DamageCalc(int attackStat, int defenseStat)
+    public int DamageCalc(int attackStat, int defenseStat, bool hasMultiplier)
     {
         int damage = Mathf.FloorToInt(((float)attackStat * mod1) - ((float)defenseStat * mod2));
         if (damage <= 1)
         {
             damage = 1;
         }
-        
+
+        if (!hasMultiplier)
+            damage = Mathf.FloorToInt((float)damage * 1.25f);
+
         return(damage);
     }
 }

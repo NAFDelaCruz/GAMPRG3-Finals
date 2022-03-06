@@ -9,7 +9,6 @@ public class UnitSelectedController : MonoBehaviour
     [HideInInspector]
     public TurnManager TurnManagerScript;
     UnitSelector UnitSelectorScript;
-    SceneChanger SceneChangerScript;
 
     [Header("Collections")]
     [HideInInspector]
@@ -34,7 +33,6 @@ public class UnitSelectedController : MonoBehaviour
     void Start()
     {
         UnitSelectorScript = GetComponent<UnitSelector>();
-        SceneChangerScript = GetComponent<SceneChanger>();
         TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
     }
@@ -55,7 +53,7 @@ public class UnitSelectedController : MonoBehaviour
             DeselectUnit();
         }
 
-        if (Input.GetMouseButtonDown(0) && SceneChangerScript.IsInGame)
+        if (Input.GetMouseButtonDown(0) && UnitSelectorScript.SceneChangerScript.IsInGame)
         {
             Vector2 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(MousePosition, Vector2.zero);
