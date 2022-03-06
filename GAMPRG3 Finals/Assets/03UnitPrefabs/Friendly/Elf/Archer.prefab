@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 866684737818793865}
   - component: {fileID: -516210083907575691}
   - component: {fileID: 67332096798270728}
+  - component: {fileID: -7135293558954548325}
+  - component: {fileID: 3473958412529774195}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -118,10 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisUnit: {fileID: 2050053372504443748}
+  ThisUnitStats: {fileID: 0}
   SelectedTiles: []
   SelectedTileActions: []
-  HasAP: 0
 --- !u!114 &-516210083907575691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +171,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7135293558954548325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050053372504443748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: -516210083907575691}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0
+--- !u!114 &3473958412529774195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050053372504443748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2cb27fa6927904dadaae43554f5c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levellingScript: {fileID: 0}
+  entityStats: {fileID: 0}
 --- !u!1001 &6280155785989478143
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5271586640431396270}
   - component: {fileID: -685042678409780335}
   - component: {fileID: 4618969284589685992}
+  - component: {fileID: 8431008372413510283}
+  - component: {fileID: 5116143455017920138}
   m_Layer: 0
   m_Name: Cavalier
   m_TagString: FriendlyUnit
@@ -119,8 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisUnitStats: {fileID: 0}
-  SelectedMoveColor: {r: 0, g: 1, b: 0.9654484, a: 0}
-  SelectedAttackColor: {r: 0, g: 0.46226418, b: 0.445949, a: 0}
   SelectedTiles: []
   SelectedTileActions: []
 --- !u!114 &-685042678409780335
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   EXP: 0
-  MaxEXP: 0
+  MaxEXP: 12
   RewardEXP: 0
   IsMelee: 1
   IsPhysical: 1
@@ -171,6 +171,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8431008372413510283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347820926617255558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: -685042678409780335}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0
+--- !u!114 &5116143455017920138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347820926617255558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2cb27fa6927904dadaae43554f5c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levellingScript: {fileID: 0}
+  entityStats: {fileID: 0}
 --- !u!1001 &5215518953794223250
 PrefabInstance:
   m_ObjectHideFlags: 0

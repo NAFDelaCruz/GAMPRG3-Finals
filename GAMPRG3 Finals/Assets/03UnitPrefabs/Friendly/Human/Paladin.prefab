@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1653699890968665446}
   - component: {fileID: 5281355524627914544}
   - component: {fileID: -499668682211384060}
+  - component: {fileID: -6162845532968340082}
+  - component: {fileID: -5759504443366849476}
   m_Layer: 0
   m_Name: Paladin
   m_TagString: FriendlyUnit
@@ -119,8 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisUnitStats: {fileID: 0}
-  SelectedMoveColor: {r: 0, g: 0.13331246, b: 1, a: 0}
-  SelectedAttackColor: {r: 0, g: 0.03773595, b: 0.2830189, a: 0}
   SelectedTiles: []
   SelectedTileActions: []
 --- !u!114 &5281355524627914544
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   EXP: 0
-  MaxEXP: 0
+  MaxEXP: 16
   RewardEXP: 0
   IsMelee: 1
   IsPhysical: 1
@@ -171,6 +171,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6162845532968340082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268109712708635802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d10bc1bbb5b0d42905b766414ea1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 5281355524627914544}
+  HPStartChance: 0
+  HPBaseChance: 0
+  HPChanceMultiplier: 0
+  AGIStartChance: 0
+  AGIBaseChance: 0
+  AGIChanceMultiplier: 0
+  STRStartChance: 0
+  STRBaseChance: 0
+  STRChanceMultiplier: 0
+  INTStartChance: 0
+  INTBaseChance: 0
+  INTChanceMultiplier: 0
+  DEFStartChance: 0
+  DEFBaseChance: 0
+  DEFChanceMultiplier: 0
+  CONStartChance: 0
+  CONBaseChance: 0
+  CONChanceMultiplier: 0
+--- !u!114 &-5759504443366849476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268109712708635802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2cb27fa6927904dadaae43554f5c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levellingScript: {fileID: 0}
+  entityStats: {fileID: 0}
 --- !u!1001 &2585354474876052197
 PrefabInstance:
   m_ObjectHideFlags: 0

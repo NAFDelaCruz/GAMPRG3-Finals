@@ -49,6 +49,7 @@ public class LevellingScript : MonoBehaviour
     {
         entityStats.EXP = entityStats.EXP - entityStats.MaxEXP;
         entityStats.MaxEXP = Mathf.FloorToInt(((entityStats.MaxEXP * 1.5f) - (entityStats.MaxEXP * 0.2f)));
+        Debug.Log("MaxEXP is set to " + entityStats.MaxEXP);
         entityStats.Level++;
 
         entityStats.HP += StatHP(entityStats.HP_B);
@@ -80,7 +81,7 @@ public class LevellingScript : MonoBehaviour
         int statIncrease = 0;
 
             float rng = GenerateNumber();
-            Debug.Log(rng);
+            //Debug.Log(rng);
             switch (rng)
             {
                 case var expression when (rng > 0 && rng < 0.4f):

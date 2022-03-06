@@ -11,8 +11,9 @@ public class SpawnLevelScript : MonoBehaviour
     //When the set level is reached the script is destroyed and the enemy will act as normal
 
     public LevellingScript levellingScript;
-    public DifficultyManager difficultyManager;
     public EntityStats entityStats;
+    GameObject GameManager;
+    DifficultyManager difficultyManager;
 
     int currentLevel;
     int setLevel;
@@ -20,13 +21,14 @@ public class SpawnLevelScript : MonoBehaviour
     {
         entityStats = this.gameObject.GetComponent<EntityStats>();
         levellingScript = this.gameObject.GetComponent<LevellingScript>();
-
+        GameManager = GameObject.Find("GameManager");
+        difficultyManager = GameManager.GetComponent<DifficultyManager>();
         SetNewLevel();
     }
 
     private void Update()
     {
-        if (currentLevel <= setLevel)
+        if (currentLevel < setLevel)
         {
             levellingScript.LevelUp();
             currentLevel++;
@@ -34,8 +36,10 @@ public class SpawnLevelScript : MonoBehaviour
         else
         {
             entityStats.Curr_HP = entityStats.HP;
+            entityStats.EXP = 0;
+            //SetMaxEXP();
             SetRewardEXP();
-            Destroy(this); //Destroy this script
+            Destroy(this,2); //Destroy this script
         }
     }
 
@@ -46,6 +50,11 @@ public class SpawnLevelScript : MonoBehaviour
 
     public void SetRewardEXP()
     {
-        entityStats.RewardEXP = Mathf.FloorToInt(1.5f * entityStats.Level);
+        entityStats.RewardEXP = Mathf.FloorToInt(1.5f * Mathf.Pow(entityStats.Level,2));
     }
+
+    //public void SetMaxEXP()
+    //{
+    //    entityStats.MaxEXP = Mathf.FloorToInt(((entityStats.MaxEXP * 1.5f) - (entityStats.MaxEXP * 0.2f)));
+    //}
 }
