@@ -45,7 +45,6 @@ public class SceneChanger : MonoBehaviour
         TavernUI.SetActive(true);
         GameUI.SetActive(false);
         Camera.GetComponent<CameraController>().StartGame = false;
-        GenerateMapScript.GenerateDimensions(DifficultyManagerScript.Difficulty);
     }
 
     public void StartGame()
@@ -57,5 +56,6 @@ public class SceneChanger : MonoBehaviour
         TavernUI.SetActive(false);
         GameUI.SetActive(true);
         Camera.GetComponent<CameraController>().StartGame = true;
+        GenerateMapScript.GenerateDimensions(DifficultyManagerScript.Difficulty);
     }
 }
