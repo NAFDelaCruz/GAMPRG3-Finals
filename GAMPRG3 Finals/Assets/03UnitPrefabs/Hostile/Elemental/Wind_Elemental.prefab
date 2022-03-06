@@ -139,6 +139,7 @@ MonoBehaviour:
   _objects: []
   _units: []
   AvailableTiles: []
+  WanderAvailableTiles: []
   Target: FriendlyUnit
 --- !u!114 &-1085029129227058620
 MonoBehaviour:
@@ -165,7 +166,7 @@ MonoBehaviour:
   INT: 2
   DEF: 1
   CON: 1
-  AttackRange: 0
+  AttackRange: 1
   Max_AP: 5
   AP: 0
   AP_LevelUp: 0
