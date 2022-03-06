@@ -41,20 +41,20 @@ public class CameraController : MonoBehaviour
                     setToStart = true;
                 }
             }
-            //Using IJKL input system
-            if (Input.GetKey(KeyCode.I)) //Up
+            //Using WASD input system
+            if (Input.GetKey(KeyCode.W)) //Up
             {
                 gameCamera.transform.position += new Vector3(0, MovementSensitivity * Time.deltaTime, 0);
             }
-            if (Input.GetKey(KeyCode.K)) //Down
+            if (Input.GetKey(KeyCode.S)) //Down
             {
                 gameCamera.transform.position -= new Vector3(0, MovementSensitivity * Time.deltaTime, 0);
             }
-            if (Input.GetKey(KeyCode.J)) //Left
+            if (Input.GetKey(KeyCode.A)) //Left
             {
                 gameCamera.transform.position -= new Vector3(MovementSensitivity * Time.deltaTime, 0, 0);
             }
-            if (Input.GetKey(KeyCode.L)) //Right
+            if (Input.GetKey(KeyCode.D)) //Right
             {
                 gameCamera.transform.position += new Vector3(MovementSensitivity * Time.deltaTime, 0, 0);
             }

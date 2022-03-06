@@ -48,7 +48,7 @@ Animator:
   m_GameObject: {fileID: 4268109712708635802}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 3dce8af24ff405c43bab81d0ecef8673, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5506a2beae7513346adafed5a9e2d874, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisUnitStats: {fileID: 0}
+  ThisUnitAnimator: {fileID: 0}
   SelectedTiles: []
   SelectedTileActions: []
 --- !u!114 &5281355524627914544
