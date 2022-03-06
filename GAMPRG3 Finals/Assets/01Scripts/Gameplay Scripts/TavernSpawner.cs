@@ -9,13 +9,6 @@ public class TavernSpawner : MonoBehaviour
 
     public GameObject[] SpawnLocations;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void SpawnTavern()
     {
         for (int i = 0; i < SpawnLocations.Length; i++)

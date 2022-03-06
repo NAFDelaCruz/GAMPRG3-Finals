@@ -37,7 +37,7 @@ public class SpawnLevelScript : MonoBehaviour
         {
             entityStats.Curr_HP = entityStats.HP;
             entityStats.EXP = 0;
-            //SetMaxEXP();
+            SetMaxAP();
             SetRewardEXP();
             Destroy(this,2); //Destroy this script
         }
@@ -53,8 +53,8 @@ public class SpawnLevelScript : MonoBehaviour
         entityStats.RewardEXP = Mathf.FloorToInt(1.5f * Mathf.Pow(entityStats.Level,2));
     }
 
-    //public void SetMaxEXP()
-    //{
-    //    entityStats.MaxEXP = Mathf.FloorToInt(((entityStats.MaxEXP * 1.5f) - (entityStats.MaxEXP * 0.2f)));
-    //}
+    public void SetMaxAP()
+    {
+        entityStats.AP = entityStats.Max_AP;
+    }
 }
