@@ -31,8 +31,7 @@ public class TavernSpawner : MonoBehaviour
     {
         for (int i = 0; i < SpawnLocations.Length; i++)
         {
-            GameObject.Destroy(SpawnLocations[i]);
-            SpawnLocations[i] = null;
+            GameObject.Destroy(SpawnLocations[i].transform.GetChild(0).gameObject);
         }
     }
 }
