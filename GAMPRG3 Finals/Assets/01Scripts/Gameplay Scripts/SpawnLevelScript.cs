@@ -21,7 +21,7 @@ public class SpawnLevelScript : MonoBehaviour
     {
         entityStats = this.gameObject.GetComponent<EntityStats>();
         levellingScript = this.gameObject.GetComponent<LevellingScript>();
-        GameManager = GameObject.Find("GameManager");
+        GameManager = GameObject.Find("Game Manager");
         difficultyManager = GameManager.GetComponent<DifficultyManager>();
         SetNewLevel();
     }
