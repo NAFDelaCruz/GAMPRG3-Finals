@@ -30,20 +30,53 @@ public class SelectedUnitUIManager : MonoBehaviour
     public Image HPFill;
     public Image APFill;
     public Image EXPFill;
-
     public Sprite PhysM;
     public Sprite PhysR;
     public Sprite MagiM;
     public Sprite MagiR;
 
+    [Header("Set UI Button Components")]
+    public Button Move;
+    public Button Attack;
+    public Button EndPhase;
+
     [Header("UI Component Values")]
     float EXPFillPercent;
     float HPFillPercent;
     float APFillPercent;
+    bool isMoveButtonNotPressed = true;
+    bool isAttackButtonNotPressed = true;
+    
+    public void DisableMoveButton()
+    {
+        isMoveButtonNotPressed = false;
+        Move.interactable = false;
+        Attack.interactable = true;
+    }
 
-    // Update is called once per frame
+    public void DisableAttackButton()
+    {
+        isAttackButtonNotPressed = false;
+        Move.interactable = true;
+        Attack.interactable = false;
+    }
+
     void Update()
     {
+        EndPhase.interactable = UnitSelector.TurnManagerScript._isTurnNotRunning;
+
+        if (isMoveButtonNotPressed && UnitSelector.SelectedUnit)
+            Move.interactable = UnitSelector.SelectedUnitStats.AP > 0;
+        
+        if (isAttackButtonNotPressed && UnitSelector.SelectedUnit)
+            Attack.interactable = UnitSelector.SelectedUnitStats.AP > 0;
+
+        if (UnitSelector.SwitchedUnits && (!isAttackButtonNotPressed || !isMoveButtonNotPressed))
+        {
+            isMoveButtonNotPressed = true;
+            isAttackButtonNotPressed = true;
+        }
+
         if (UnitSelector.SelectedUnit != null)
         {
             PlayerUI.gameObject.SetActive(true);
