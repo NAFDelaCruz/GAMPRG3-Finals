@@ -32448,6 +32448,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2347936414673121771, guid: 27c1f53e45c43f742a0fc9a74e11856b,
         type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 901405593891224282, guid: 86ef5532f2fd5464f8f148f1b2be2e6b,
+        type: 3}
+    - target: {fileID: 2347936414673121771, guid: 27c1f53e45c43f742a0fc9a74e11856b,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -32689,6 +32695,123 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 7674197820824738978, guid: 003d03fbea5a5fd49bf50cedd8fb3746,
+        type: 3}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760755507}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 760755507}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 760755508}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MarkMoveTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MarkMoveTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DisableMoveButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871174668172, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: -5594165200331995479, guid: 003d03fbea5a5fd49bf50cedd8fb3746,
+        type: 3}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760755507}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 760755508}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetAttackTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableAttackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871221932681, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6379005871303120093, guid: 2445478665eb30048900e1d288589803,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32718,6 +32841,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379005871636014300, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760755507}
+    - target: {fileID: 6379005871636014300, guid: 2445478665eb30048900e1d288589803,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rest
       objectReference: {fileID: 0}
     - target: {fileID: 6379005871677750248, guid: 2445478665eb30048900e1d288589803,
         type: 3}
