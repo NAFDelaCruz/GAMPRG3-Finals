@@ -33,7 +33,6 @@ public class CameraController : MonoBehaviour
 
         if (StartGame)
         {
-            Debug.Log("Moving to PLay Area");
             if (!setToStart)
             {
                 gameCamera.transform.position = generateMap.StartPoint.transform.position + new Vector3(0, 0, -10);

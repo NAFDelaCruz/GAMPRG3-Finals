@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FriendlyUnit
+  - Tile
   layers:
   - Default
   - TransparentFX

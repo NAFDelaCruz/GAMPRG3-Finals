@@ -15,7 +15,9 @@ public class TurnManager : MonoBehaviour
     public GameObject Map;
     public List<EntityPriority> EntityList;
     public ActionManager Actions;
+    public UnityEvent TurnStarts;
     public UnityEvent TurnEnds;
+    public bool _isTurnNotRunning = true;
     Vector2 LastPos;
     float Distance;
     float X, Y;
@@ -30,7 +32,10 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator SlowLoop()
     {
-        yield return new WaitForSeconds(1f);
+        TurnStarts.Invoke();
+        _isTurnNotRunning = false;
+
+        yield return new WaitForSeconds(2f);
 
         for (int index1 = 0; index1 < EntityList.Count; index1++)
         {
@@ -39,7 +44,8 @@ public class TurnManager : MonoBehaviour
 
             yield return StartCoroutine(DoUnitAction());
         }
-        
+
+        _isTurnNotRunning = true;
         TurnEnds.Invoke();
     }
 
@@ -47,7 +53,16 @@ public class TurnManager : MonoBehaviour
     {
         for (int index2 = 0; index2 < Actions.SelectedTiles.Count; index2++)
         {
-            if (Actions.SelectedTileActions[index2] == "Move")
+            if (Actions.SelectedTileActions[index2] == "Rest")
+            {
+                int UnitMaxHP = EntityList[EntityIndex].Entity.GetComponent<EntityStats>().HP;
+                int AmountToHeal = Mathf.FloorToInt(UnitMaxHP * 0.1f);
+                if (AmountToHeal == 0) AmountToHeal = 1;
+                EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP += AmountToHeal;
+                if (EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP > UnitMaxHP) EntityList[EntityIndex].Entity.GetComponent<EntityStats>().Curr_HP = UnitMaxHP;
+                yield return new WaitForSeconds(1f);
+            }
+            else if (Actions.SelectedTileActions[index2] == "Move")
             {
                 X = GetDirection(EntityList[EntityIndex].Entity.transform.parent.position.x, Actions.SelectedTiles[index2].transform.position.x);
                 Y = GetDirection(EntityList[EntityIndex].Entity.transform.parent.position.y, Actions.SelectedTiles[index2].transform.position.y);
@@ -57,7 +72,7 @@ public class TurnManager : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 _isMoving = false;
                 EntityList[EntityIndex].Entity.transform.parent = Actions.SelectedTiles[index2].transform;
-                EntityList[EntityIndex].Entity.transform.localPosition = new Vector3(0, 0 , 0);
+                EntityList[EntityIndex].Entity.transform.localPosition = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(0.2f);
             }
             else if (Actions.SelectedTileActions[index2] == "Attack")

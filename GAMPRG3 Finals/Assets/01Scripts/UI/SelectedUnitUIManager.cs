@@ -8,7 +8,7 @@ public class SelectedUnitUIManager : MonoBehaviour
 {
     [Header("Set Reference Components")]
     public UnitSelector UnitSelector;
-    public Canvas PlayerUI;
+    public GameObject PlayerUI;
 
     [Header("Set UI Components")]
     public GameObject EXP;

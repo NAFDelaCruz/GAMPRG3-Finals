@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7182574362701186473}
   m_Layer: 8
   m_Name: CaveFloorTile_V_Walkable
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

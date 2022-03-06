@@ -9,8 +9,10 @@ using UnityEngine;
 
 public class GenerateMap : MonoBehaviour
 {
+
     [Header("Set Components")]
     UnitSpawner UnitSpawnerScript;
+    EnemySpawner EnemySpawnerScript;
 
     [Header("Default Values")]
     public GameObject VoidTilePrefab;
@@ -24,7 +26,9 @@ public class GenerateMap : MonoBehaviour
     //Name List names according to set name
 
     [Header("Map Variables")]
+    [HideInInspector]
     public int MapWidth;
+    [HideInInspector]
     public int MapHeight;
     [Tooltip("Controls how detailed the map is. Recommended value: 4-20")]
     public float Magnification;
@@ -32,6 +36,11 @@ public class GenerateMap : MonoBehaviour
     public int XOffset = 0; // <- +>
     [Tooltip("Shifts tiles down (-) or up (+).")]
     public int YOffset = 0; // v- +^
+    float DefaultSize = 20;
+    float SizeScaleFactor = 1.1f;
+    float VariationFactor = 0.25f;
+    float ScaledSize;
+    float Variation;
 
     [Header("Start and End Points")]
     [HideInInspector]
@@ -59,14 +68,29 @@ public class GenerateMap : MonoBehaviour
     List<List<GameObject>> TilePrefabs = new List<List<GameObject>>();
     List<Dictionary<float, GameObject>> TileSets = new List<Dictionary<float, GameObject>>();
     GameObject TilePrefab;
+
     void Start()
     {
         //Each set for a list add here
-        UnitSpawnerScript = GetComponent<UnitSpawner>(); ;
+        UnitSpawnerScript = GetComponent<UnitSpawner>();
+        EnemySpawnerScript = GetComponent<EnemySpawner>();
         PrefabChances.Add(TerrainPrefabsChanceValues);
         TilePrefabs.Add(TerrainPrefabs);
 
         CreateTileSet();
+    }
+    
+    public void GenerateDimensions(int Difficulty)
+    {
+        ScaledSize = Mathf.FloorToInt(DefaultSize + (Difficulty * SizeScaleFactor) - (0.5f * Difficulty));
+        RandomizeDimension(ScaledSize);
+    }
+
+    public void RandomizeDimension(float scaledSize)
+    {
+        Variation = Mathf.FloorToInt((scaledSize * VariationFactor) / 2);
+        MapHeight = Mathf.FloorToInt((Random.Range(scaledSize - Variation, scaledSize + Variation)));
+        MapWidth = Mathf.FloorToInt((Random.Range(scaledSize - Variation, scaledSize + Variation)));
         Generate();
     }
 
@@ -240,6 +264,7 @@ public class GenerateMap : MonoBehaviour
                 IsEndInvalid = false;
                 EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
                 UnitSpawnerScript.SpawnUnits(StartPoint, ValidTiles);
+                EnemySpawnerScript.SpawnEnemies();
             }
         }
 

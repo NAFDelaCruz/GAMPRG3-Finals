@@ -13,10 +13,12 @@ public class AIPathfinding : MonoBehaviour
     [Header("Collections")]
     [HideInInspector]
     public Collider[] _objects;
-    //[HideInInspector]
+    [HideInInspector]
     public List<GameObject> _units;
     [HideInInspector]
     public Collider2D[] AvailableTiles;
+    [HideInInspector]
+    public Collider2D[] WanderAvailableTiles;
 
     [Header("Entity Stats")]
     public string Target;
@@ -26,17 +28,12 @@ public class AIPathfinding : MonoBehaviour
     int _currentTarget = 0;
     Transform LastTile;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            StartPathfinding();
-    }
-
     void Start()
     {
         TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
-        ActionManagerScript = GetComponent<ActionManager>();
+        TurnManagerScript.TurnStarts.AddListener(StartPathfinding);
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
+        ActionManagerScript = GetComponent<ActionManager>();
         _stats = gameObject.GetComponent<EntityStats>();
     }
 
@@ -64,16 +61,18 @@ public class AIPathfinding : MonoBehaviour
 
     void Wander()
     {
-        if (AvailableTiles.Length != 0)
-            Array.Clear(AvailableTiles, 0, AvailableTiles.Length);
-        AvailableTiles = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(_stats.Max_AP, _stats.Max_AP), 0);
+        if (WanderAvailableTiles.Length != 0)
+            Array.Clear(WanderAvailableTiles, 0, WanderAvailableTiles.Length);
+        WanderAvailableTiles = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(_stats.Max_AP, _stats.Max_AP), 0);
 
-        int RandomTile = UnityEngine.Random.Range(0, AvailableTiles.Length) - 1;
-        int MaxCount = Mathf.RoundToInt(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), AvailableTiles[RandomTile].transform.position));
-        
+        int RandomTile = UnityEngine.Random.Range(0, WanderAvailableTiles.Length - 1);
+        int MaxCount = Mathf.RoundToInt(Vector2.Distance(new Vector2(transform.parent.position.x, transform.parent.position.y), WanderAvailableTiles[RandomTile].transform.position));
+
         for (int Count = 0; Count < MaxCount; Count++)
         {
-            GetTiles(AvailableTiles[RandomTile].gameObject);
+            LastTile = ActionManagerScript.GetLastMoveTile(gameObject.transform);
+            ActionManagerScript.SelectedTiles.Add(GetTiles(WanderAvailableTiles[RandomTile].gameObject));
+            ActionManagerScript.SelectedTileActions.Add("Move");
         }
     }
 
@@ -94,7 +93,7 @@ public class AIPathfinding : MonoBehaviour
             }
             else if (_distanceFromTarget > ActionManagerScript.ThisUnitStats.AttackRange + 0.5f)
             {
-                ActionManagerScript.SelectedTiles.Add(GetTiles(_units[_currentTarget]));
+                ActionManagerScript.SelectedTiles.Add(GetTiles(_units[_currentTarget].transform.parent.gameObject));
                 ActionManagerScript.SelectedTileActions.Add("Move");
             }
         }
@@ -103,8 +102,8 @@ public class AIPathfinding : MonoBehaviour
     GameObject GetTiles(GameObject Target)
     {
         GameObject Tile = null;
-        float X = GetDirection(LastTile.position.x, Target.transform.parent.position.x);
-        float Y = GetDirection(LastTile.position.y, Target.transform.parent.position.y);
+        float X = GetDirection(LastTile.position.x, Target.transform.position.x);
+        float Y = GetDirection(LastTile.position.y, Target.transform.position.y);
         Vector2 dir = Target.transform.position - transform.position;
         float _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (_angle < 0) _angle += 360f;

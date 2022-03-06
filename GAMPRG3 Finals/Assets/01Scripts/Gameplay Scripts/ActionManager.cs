@@ -25,7 +25,7 @@ public class ActionManager : MonoBehaviour
         Transform TileTransform = null;
 
         if (!SelectedTileActions.Contains("Move"))
-            TileTransform = GameObjectTransform.transform.parent;
+            TileTransform = GameObjectTransform.parent;
         else if (SelectedTileActions.Contains("Move"))
         {
             for (int LastIndex = SelectedTileActions.Count - 1; LastIndex >= 0; LastIndex--)

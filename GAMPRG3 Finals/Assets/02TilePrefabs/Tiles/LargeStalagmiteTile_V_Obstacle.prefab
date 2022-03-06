@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8336623220769944384}
   m_Layer: 8
   m_Name: LargeStalagmiteTile_V_Obstacle
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

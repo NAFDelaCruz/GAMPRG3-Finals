@@ -6,7 +6,7 @@ public class UnitSpawner : MonoBehaviour
 {
     [Header("Set Components")]
     public GameObject TestUnit;
-    public GameObject[] TestPartyUnits;
+    public List<GameObject> TestPartyUnits;
     int Count = 0;
 
     public void SpawnUnits(GameObject StartPoint, List<GameObject> Tiles)
@@ -15,7 +15,7 @@ public class UnitSpawner : MonoBehaviour
 
         foreach (GameObject AvailableTile in Tiles)
         {
-            if (AvailableTile.transform.childCount == 0 && Count < TestPartyUnits.Length)
+            if (AvailableTile.transform.childCount == 0 && Count < TestPartyUnits.Count)
             {
                 Instantiate(TestPartyUnits[Count], AvailableTile.transform);
                 Count++;

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7715414901999363391}
   - component: {fileID: 1359081277153742992}
   - component: {fileID: -290740875722088961}
+  - component: {fileID: 4359031577179611624}
+  - component: {fileID: -1493268398310249829}
   - component: {fileID: -6098723751583133910}
   - component: {fileID: -6445403533957501693}
   - component: {fileID: 7805180257636594741}
@@ -106,6 +108,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4359031577179611624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863403950934246137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2520ab3746a0bf4aa6fc2126dfa5eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisUnitStats: {fileID: 0}
+  SelectedTiles: []
+  SelectedTileActions: []
+--- !u!114 &-1493268398310249829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863403950934246137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9998a7e172ec6884188da5d4486dcda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagerScript: {fileID: 0}
+  ActionManagerScript: {fileID: 0}
+  _objects: []
+  _units: []
+  AvailableTiles: []
+  Target: FriendlyUnit
 --- !u!114 &-6098723751583133910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +157,8 @@ MonoBehaviour:
   EXP: 0
   MaxEXP: 0
   RewardEXP: 0
+  IsMelee: 0
+  IsPhysical: 0
   HP: 15
   Curr_HP: 0
   AGI: 2

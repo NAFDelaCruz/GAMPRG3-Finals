@@ -9,6 +9,7 @@ public class UnitSelectedController : MonoBehaviour
     [HideInInspector]
     public TurnManager TurnManagerScript;
     UnitSelector UnitSelectorScript;
+    SceneChanger SceneChangerScript;
 
     [Header("Collections")]
     [HideInInspector]
@@ -33,6 +34,7 @@ public class UnitSelectedController : MonoBehaviour
     void Start()
     {
         UnitSelectorScript = GetComponent<UnitSelector>();
+        SceneChangerScript = GetComponent<SceneChanger>();
         TurnManagerScript = GameObject.Find("Game Manager").GetComponent<TurnManager>();
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
     }
@@ -49,15 +51,16 @@ public class UnitSelectedController : MonoBehaviour
         if (UnitSelectorScript.SelectedUnit && UnitSelectorScript.SelectedUnitStats.AP == 0)
         {
             UnitSelectorScript.SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
+            UnitSelectorScript.SelectedUnit = null;
             DeselectUnit();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && SceneChangerScript.IsInGame)
         {
             Vector2 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(MousePosition, Vector2.zero);
 
-            if (ValidTiles.Contains(hit.collider.gameObject))
+            if (hit.collider && ValidTiles.Contains(hit.collider.gameObject))
             {
                 AllSelectedTiles.Add(hit.collider.gameObject);
                 UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Add(hit.collider.gameObject);
@@ -75,12 +78,17 @@ public class UnitSelectedController : MonoBehaviour
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().color = SelectedAttackColor;
             }
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.O))
-            MarkMoveTiles();
-
-        if (Input.GetKeyDown(KeyCode.P))
-            GetAttackTiles();
+    public void Rest()
+    {
+        if (UnitSelectorScript.SelectedUnitStats.AP >= 2)
+        {
+            Debug.Log("AddedRest");
+            UnitSelectorScript.SelectedUnitStats.AP -= 2;
+            UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Add("Rest");
+            UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Add(UnitSelectorScript.SelectedUnit.transform.parent.gameObject);
+        }
     }
 
     public void MarkMoveTiles()

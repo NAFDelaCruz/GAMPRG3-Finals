@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class SceneChanger : MonoBehaviour
 {
+    [Header("Change Scene Bools")]
     public bool IsAtStart = true;
     public bool IsAtTavern = false;
     public bool IsInGame = false;
 
+    [Header("Set Components")]
     public GameObject Camera;
+    public GenerateMap GenerateMapScript;
+    public DifficultyManager DifficultyManagerScript;
     public Vector3 CamPos;
 
+    [Header("Set UI Components")]
     public GameObject TitleScreenUI;
     public GameObject TavernUI;
     public GameObject GameUI;
-
+    
     Vector3 TitlePosition = new Vector3(-150, 0, -10);
     Vector3 TavernPosition = new Vector3(-100, 0, -10);
+
     public void GoToTitle()
     {
         IsAtStart = true;
@@ -39,6 +45,7 @@ public class SceneChanger : MonoBehaviour
         TavernUI.SetActive(true);
         GameUI.SetActive(false);
         Camera.GetComponent<CameraController>().StartGame = false;
+        GenerateMapScript.GenerateDimensions(DifficultyManagerScript.Difficulty);
     }
 
     public void StartGame()

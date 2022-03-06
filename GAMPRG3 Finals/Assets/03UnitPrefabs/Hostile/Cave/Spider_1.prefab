@@ -157,6 +157,8 @@ MonoBehaviour:
   EXP: 0
   MaxEXP: 0
   RewardEXP: 0
+  IsMelee: 0
+  IsPhysical: 0
   HP: 3
   Curr_HP: 0
   AGI: 4
