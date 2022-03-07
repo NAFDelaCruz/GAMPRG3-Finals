@@ -50,6 +50,11 @@ public class UnitSelector : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKey(KeyCode.F))
+            Time.timeScale = 2f;
+        else
+            Time.timeScale = 1f;
     }
 
     IEnumerator SwitchedUnit()

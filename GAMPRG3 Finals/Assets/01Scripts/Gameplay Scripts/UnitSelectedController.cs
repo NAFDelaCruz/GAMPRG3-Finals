@@ -37,21 +37,10 @@ public class UnitSelectedController : MonoBehaviour
         TurnManagerScript.TurnEnds.AddListener(ResetTurn);
     }
 
-    void ResetTurn()
-    {
-        UnmarkTiles(AllSelectedTiles);
-        ValidTiles.Clear();
-        AvailableTiles.Clear();
-    }
-
     void Update()
     {
         if (UnitSelectorScript.SelectedUnit && UnitSelectorScript.SelectedUnitStats.AP == 0)
-        {
-            UnitSelectorScript.SelectedUnit.GetComponent<SpriteRenderer>().color = Color.white;
-            UnitSelectorScript.SelectedUnit = null;
             DeselectUnit();
-        }
 
         if (Input.GetMouseButtonDown(0) && UnitSelectorScript.SceneChangerScript.IsInGame)
         {
@@ -74,6 +63,32 @@ public class UnitSelectedController : MonoBehaviour
                 }
                 else if (TileAction == "Attack")
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().color = SelectedAttackColor;
+            }
+        }
+    }
+
+    void ResetTurn()
+    {
+        UnmarkTiles(AllSelectedTiles);
+        ValidTiles.Clear();
+        AvailableTiles.Clear();
+    }
+
+    public void UndoAction()
+    {
+        if(UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Count > 0)
+        {
+            string LastAction = UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions[UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Count - 1];
+            GameObject LastTile = UnitSelectorScript.SelectedUnitActionManager.SelectedTiles[UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Count - 1];
+
+            if (LastAction == "Rest")
+                UnitSelectorScript.SelectedUnitStats.AP += 2;
+            else
+            {
+                UnitSelectorScript.SelectedUnitStats.AP++;
+                LastTile.GetComponent<SpriteRenderer>().color = Color.white;
+                UnitSelectorScript.SelectedUnitActionManager.SelectedTiles.Remove(LastTile);
+                UnitSelectorScript.SelectedUnitActionManager.SelectedTileActions.Remove(LastAction);
             }
         }
     }

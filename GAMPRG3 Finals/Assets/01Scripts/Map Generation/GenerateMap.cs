@@ -262,7 +262,7 @@ public class GenerateMap : MonoBehaviour
             {
                 EndPoint = GameObject.Find(EndX + "" + EndY);
                 IsEndInvalid = false;
-                EndPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+                EndPoint.GetComponent<SpriteRenderer>().color = Color.blue;
                 UnitSpawnerScript.SpawnUnits(StartPoint, ValidTiles);
                 EnemySpawnerScript.SpawnEnemies();
             }
