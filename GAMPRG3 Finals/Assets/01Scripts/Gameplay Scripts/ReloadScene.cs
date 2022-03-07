@@ -12,7 +12,7 @@ public class ReloadScene : MonoBehaviour
     {
         MapScript = GetComponent<GenerateMap>();
         TurnManagerScript = GetComponent<TurnManager>();
-        //TurnManagerScript.TurnEnds.AddListener(CheckIfEnd);
+        TurnManagerScript.TurnEnds.AddListener(CheckIfEnd);
     }
 
     public void Restart()
@@ -22,7 +22,12 @@ public class ReloadScene : MonoBehaviour
 
     public void CheckIfEnd()
     {
+        if (GameObject.FindGameObjectsWithTag("FriendlyUnit").Length < 11)
+            Restart();
+
+        /*
         if (MapScript.EndPoint.transform.childCount > 0 && MapScript.EndPoint.transform.GetChild(0).CompareTag("Friendly Unit"))
             Restart();
+        */
     }
 }

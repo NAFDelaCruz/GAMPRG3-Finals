@@ -105,7 +105,7 @@ public class TurnManager : MonoBehaviour
                 {
                     Target.ThisUnitAnimator.SetBool("Death", true);
                     yield return new WaitForSeconds(1f);
-                    Destroy(Target.gameObject);
+                    if (Target != null) Destroy(Target.gameObject);
                 }
             }
         }
